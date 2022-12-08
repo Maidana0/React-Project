@@ -1,0 +1,39 @@
+footer{
+    margin-bottom: 0;
+    margin-top: auto;
+    background-color: $bg-dark;
+    width: 100%;
+    height: auto ;
+    @include flex-center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    border-top: solid 3px $primary-color;
+    padding: 1rem;
+    
+        a{  color: $text-w;
+            font-size:smaller;
+            transition: all ease 0.5s;
+            &:hover{
+                transform: scale(1.05);
+                color: $primary-color;
+            }
+        }
+        .footer-contact{
+            @include flex-center;
+            flex-direction: row;
+            gap:1rem;
+            margin: 0.5rem auto 1rem;
+
+            svg{
+                color: $text-w;
+                transition: all ease 0.5s;
+            }
+
+            svg:hover{
+                color: $primary-color;
+                transform: scale(1.2);
+                transition: all ease 0.6s;
+            }
+        }
+}

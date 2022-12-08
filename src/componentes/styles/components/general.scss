@@ -1,0 +1,38 @@
+*{  padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body{
+    background-color:$background;
+    min-height: 100%;
+    font-family: $roboto-slab;
+
+}
+.App{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+
+}
+
+*::-webkit-scrollbar {width: 4px; height: 5px; }
+*::-webkit-scrollbar-track {background: $bg-dark; }
+*::-webkit-scrollbar-thumb {background-color: $primary-color; border-radius: 5px; }
+
+
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+button{
+    border:none;
+    background: none;
+}

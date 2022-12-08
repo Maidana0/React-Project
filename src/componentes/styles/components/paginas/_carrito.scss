@@ -1,0 +1,54 @@
+// CONTADOR DEL PRODUCTO
+.cont-prod{
+    height: 10%;
+    width: 50%;
+    border-radius: 100px;
+    @include flex-center;  
+    justify-content: space-evenly;
+    font-size: 1.3em;
+    margin: 10px auto 2px;
+    .btn-cont{
+        color: $secundary-color;
+        border-radius: 100%;
+        font-size: 2em;
+        padding: 5px;
+        transition: all ease .3s;
+        &:hover{background-color: rgba(0, 0, 0, 0.1)}
+    }
+}
+
+
+.container-carrito{
+    @include flex-center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem auto;
+    border-radius: 8px;
+    width: 90%;
+    height: auto;
+
+
+
+    .cart-list, .cart-product {
+        background-color: white;
+        @include flex-center;
+        min-height: 5rem;
+        padding: 5px;
+        border-left: solid 12px;
+        border-radius: 8px;
+        margin: 5px auto 20px;
+        box-shadow: -1px 2px 5px 1px $bg-dark;
+    }
+    .cart-list{
+        width: 80%;
+        border-color: $primary-color;
+        @include flex-center;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .cart-product{
+        width: auto;
+        padding: 0 50px;
+        border-color: $secundary-color;
+    }
+}

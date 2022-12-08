@@ -1,0 +1,46 @@
+// MIXIN--
+@mixin flex-center {
+    display: flex; 
+    align-items: center;
+}
+
+
+@mixin hover-d {
+    background-color: rgba(255, 255, 0, 0.8);
+    color: $secundary-color;
+    transition: all ease 0.5s;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
+$roboto-slab: 'Roboto', sans-serif;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
+$openSans-sansSerif:'Open Sans', sans-serif;
+
+// VARIABLES--
+$background: rgb(255, 255, 180);
+
+$bg-dark: rgb(65, 65, 0);
+
+$content-bg-dark:  rgba(0, 0, 0, 0.7);
+
+
+$primary-color: yellow;
+
+$secundary-color: black;
+
+$complementary-color: orange;
+
+
+$text-w: white;
+
+
+
+// EXTENDS--
+
+
+// %theme{
+
+// }
