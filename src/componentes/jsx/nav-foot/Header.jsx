@@ -4,7 +4,7 @@ import {  AiFillHome, AiFillInfoCircle, AiFillShop, AiOutlineShoppingCart} from 
 
 
 const Header = ()=>{
-    const CartCont = (props)=>{
+    const CartWidget = (props)=>{
         if(Number(props.items)>=1){
             return(<small>{props.items}</small>)
         } else{return(" ")}
@@ -28,7 +28,7 @@ return (
                     <a className="link"><AiFillShop />Category 3</a>
                     {/* <a className="link"><AiFillInfoCircle /> About</a> */}
                     <a className='link-shop'> <AiOutlineShoppingCart/>
-                        <CartCont  items={1} />
+                        <CartWidget  items={1} />
                     </a>
                 </li>
 

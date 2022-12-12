@@ -1,0 +1,238 @@
+{
+    "zoro":[
+        {
+        "id": "1",
+        "nombre":"Producto 1",
+        "precio": "250",
+        "stock": "18",
+        "imagen": "zoro/zoro.jpg"
+        },
+
+        {
+        "id": "2",
+        "nombre":"Producto 2",
+        "precio": "1500",
+        "stock": "15",
+        "imagen": "zoro/zoro.jpg"
+        },
+        {
+        "id": "3",
+        "nombre":"Producto 3",
+        "precio": "500",
+        "stock": "28",
+        "imagen": "zoro/zoro.jpg"
+        },
+        {
+        "id": "4",
+        "nombre":"Producto 4",
+        "precio": "500",
+        "stock": "8",
+        "imagen": "zoro/zoro.jpg"
+        },
+        {
+        "id": "5",
+        "nombre":"Producto 5",
+        "precio": "800",
+        "stock": "10",
+        "imagen": "zoro/zoro.jpg"
+        },
+        {
+        "id": "6",
+        "nombre":"Producto 6",
+        "precio": "450",
+        "stock": "25",
+        "imagen": "zoro/zoro.jpg"
+        }
+                                            
+            
+    ],
+
+    
+    "usopp":[
+        {
+        "id": "101",
+        "nombre":"Producto 1",
+        "precio": "700",
+        "stock": "12",
+        "imagen": "usopp/arabasta-usopp.jpg"
+        },
+
+        {
+        "id": "102",
+        "nombre":"Producto 2",
+        "precio": "100",
+        "stock": "5",
+        "imagen": "usopp/destroy-usopp.jpg"
+        },
+        {
+        "id": "103",
+        "nombre":"Producto 3",
+        "precio": "350",
+        "stock": "10",
+        "imagen": "usopp/face-usopp.jpg"
+        },
+        {
+        "id": "104",
+        "nombre":"Producto 4",
+        "precio": "250",
+        "stock": "38",
+        "imagen": "usopp/sogeking-usopp.jpg"
+        },
+        {
+        "id": "105",
+        "nombre":"Producto 5",
+        "precio": "1500",
+        "stock": "4",
+        "imagen": "usopp/icon-usopp.png"
+        },
+        {
+        "id": "106",
+        "nombre":"Producto 6",
+        "precio": "800",
+        "stock": "9",
+        "imagen": "usopp/kid-usopp.jpg"
+        },
+
+        {"id": "107",
+        "nombre":"Producto 7",
+        "precio": "1000",
+        "stock": "10",
+        "imagen": "usopp/luz-usopp.jpg"
+        },
+        {
+        "id": "108",
+        "nombre":"Producto 8",
+        "precio": "800",
+        "stock": "15",
+        "imagen": "usopp/scary-usopp.jpg"
+        },
+        {
+        "id": "109",
+        "nombre":"Producto 9",
+        "precio": "600",
+        "stock": "8",
+        "imagen": "usopp/smile-usopp.jpg"
+        },
+        {
+        "id": "110",
+        "nombre":"Producto 10",
+        "precio": "400",
+        "stock": "20",
+        "imagen": "usopp/zicon2-usopp.png"
+        },
+        {
+        "id": "111",
+        "nombre":"Producto 11",
+        "precio": "500",
+        "stock": "25",
+        "imagen": "usopp/god-usopp.jpg"
+        }
+                                            
+            
+    ],
+
+
+    "sanji":[
+        {
+        "id": "201",
+        "nombre":"Producto 1",
+        "precio": "250",
+        "stock": "15",
+        "imagen": "sanji/sanji-3.jpg"
+        },
+
+        {
+        "id": "202",
+        "nombre":"Producto 2",
+        "precio": "550",
+        "stock": "8",
+        "imagen": "sanji/sanji-angry.jpg"
+        },
+        {
+        "id": "103",
+        "nombre":"Producto 3",
+        "precio": "800",
+        "stock": "5",
+        "imagen": "sanji/sanji-germa.jpg"
+        },
+        {
+        "id": "204",
+        "nombre":"Producto 4",
+        "precio": "100",
+        "stock": "10",
+        "imagen": "sanji/sanji-kid3.jpg"
+        },
+        {
+        "id": "205",
+        "nombre":"Producto 5",
+        "precio": "600",
+        "stock": "8",
+        "imagen": "sanji/sanji-heart.jpg"
+        },
+        {
+        "id": "206",
+        "nombre":"Producto 6",
+        "precio": "500",
+        "stock": "20",
+        "imagen": "sanji/sanji-kid.jpg"
+        },
+
+        {"id": "207",
+        "nombre":"Producto 7",
+        "precio": "950",
+        "stock": "18",
+        "imagen": "sanji/sanji-kid2.jpg"
+        },
+        {
+        "id": "208",
+        "nombre":"Producto 8",
+        "precio": "350",
+        "stock": "25",
+        "imagen": "sanji/sanjii.jpg"
+        },
+        {
+        "id": "209",
+        "nombre":"Producto 9",
+        "precio": "500",
+        "stock": "8",
+        "imagen": "sanji/sanji-nami.jpg"
+        },
+        {
+        "id": "210",
+        "nombre":"Producto 10",
+        "precio": "1000",
+        "stock": "10",
+        "imagen": "sanji/sanji-pervert.jpg"
+        },
+        {
+        "id": "211",
+        "nombre":"Producto 11",
+        "precio": "1000",
+        "stock": "14",
+        "imagen": "sanji/sanji-smile.jpg"
+        },
+        {
+        "id": "212",
+        "nombre":"Producto 12",
+        "precio": "350",
+        "stock": "8",
+        "imagen": "sanji/sanji-wtf.jpg"
+            },
+        {
+        "id": "213",
+        "nombre":"Producto 13",
+        "precio": "200",
+        "stock": "22",
+        "imagen": "sanji/sanji-wanted.jpg"
+        },
+        {
+        "id": "214",
+        "nombre":"Producto 14",
+        "precio": "150",
+        "stock": "29",
+        "imagen": "sanji/sanji-ok.jpg"
+        }
+                                            
+            
+    ]
+}

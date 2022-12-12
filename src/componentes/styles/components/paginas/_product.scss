@@ -24,7 +24,7 @@
         background-color: white;
         transition:  ease all .5s;
         width: 280px;
-        height: 350px;
+        height: 410px;
         @include flex-center;  
         flex-direction:column;
 
@@ -33,12 +33,14 @@
             transform: scale(1.05);
             box-shadow: 0px 0px 20px 8px $content-bg-dark;
             border: solid 2px $primary-color ;
-
+            .detalles-prod{
+                color: black;
+            }
 
         }
         .prod-img{
             border-radius: 18px 18px 0 0;
-            height: 65%;
+            height: 55%;
             width: 100%;  
             @include flex-center;     
             justify-content: center;
@@ -70,14 +72,12 @@
             height: 100%;
             @include flex-center;    
             justify-content: space-evenly;
-            margin-top: 12px;
+            margin-top: 8px;
 
         }
         .nombre-prod{
             font-weight: 700;
             width: 60%;
-
-
         }
         .precio-prod{
             font-weight: 300;
@@ -85,14 +85,32 @@
             background-color: rgba(207, 207, 207, 0.5);
             box-shadow: 0px 0px 4px 1px $secundary-color;            
             margin-right: 5px;
-            width: 40%;
+            width: 35%;
+            height: 80%
         }
 
 
+        .detalles-prod{
+            @include flex-center;    
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            height: 14%;
+            padding: 10px 5px 2px;
+            font-size: .9em;
+            font-weight: 300;
+            color: gray;
+            transition:  ease all .2s;
+        }
+        .cont-prod{
+            height: 10%;
+            margin: 0 auto;
+            padding: 0;
+        }
 
         .agregar-carrito{
             width: 100%;
-            height: 15%;
+            height: 11%;
             border-radius: 0 0 18px 18px;
             @include flex-center;  
             justify-content: center;
@@ -103,6 +121,12 @@
             font-size: 1rem;
         }
 
+        @media ( max-width: 785px ){
+        .detalles-prod{
+            color: black;
+        }
+        }
     }
+
 }
   
