@@ -5,7 +5,7 @@
         "nombre":"Producto 1",
         "precio": "250",
         "stock": "18",
-        "imagen": "zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro.jpg"
         },
 
         {
@@ -13,35 +13,35 @@
         "nombre":"Producto 2",
         "precio": "1500",
         "stock": "15",
-        "imagen": "zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro.jpg"
         },
         {
         "id": "3",
         "nombre":"Producto 3",
         "precio": "500",
         "stock": "28",
-        "imagen": "zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro.jpg"
         },
         {
         "id": "4",
         "nombre":"Producto 4",
         "precio": "500",
         "stock": "8",
-        "imagen": "zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro.jpg"
         },
         {
         "id": "5",
         "nombre":"Producto 5",
         "precio": "800",
         "stock": "10",
-        "imagen": "zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro.jpg"
         },
         {
         "id": "6",
         "nombre":"Producto 6",
         "precio": "450",
         "stock": "25",
-        "imagen": "zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro.jpg"
         }
                                             
             
@@ -54,7 +54,7 @@
         "nombre":"Producto 1",
         "precio": "700",
         "stock": "12",
-        "imagen": "usopp/arabasta-usopp.jpg"
+        "imagen": "./images/usopp/arabasta-usopp.jpg"
         },
 
         {
@@ -62,70 +62,70 @@
         "nombre":"Producto 2",
         "precio": "100",
         "stock": "5",
-        "imagen": "usopp/destroy-usopp.jpg"
+        "imagen": "./images/usopp/destroy-usopp.jpg"
         },
         {
         "id": "103",
         "nombre":"Producto 3",
         "precio": "350",
         "stock": "10",
-        "imagen": "usopp/face-usopp.jpg"
+        "imagen": "./images/usopp/face-usopp.jpg"
         },
         {
         "id": "104",
         "nombre":"Producto 4",
         "precio": "250",
         "stock": "38",
-        "imagen": "usopp/sogeking-usopp.jpg"
+        "imagen": "./images/usopp/sogeking-usopp.jpg"
         },
         {
         "id": "105",
         "nombre":"Producto 5",
         "precio": "1500",
         "stock": "4",
-        "imagen": "usopp/icon-usopp.png"
+        "imagen": "./images/usopp/icon-usopp.png"
         },
         {
         "id": "106",
         "nombre":"Producto 6",
         "precio": "800",
         "stock": "9",
-        "imagen": "usopp/kid-usopp.jpg"
+        "imagen": "./images/usopp/kid-usopp.jpg"
         },
 
         {"id": "107",
         "nombre":"Producto 7",
         "precio": "1000",
         "stock": "10",
-        "imagen": "usopp/luz-usopp.jpg"
+        "imagen": "./images/usopp/luz-usopp.jpg"
         },
         {
         "id": "108",
         "nombre":"Producto 8",
         "precio": "800",
         "stock": "15",
-        "imagen": "usopp/scary-usopp.jpg"
+        "imagen": "./images/usopp/scary-usopp.jpg"
         },
         {
         "id": "109",
         "nombre":"Producto 9",
         "precio": "600",
         "stock": "8",
-        "imagen": "usopp/smile-usopp.jpg"
+        "imagen": "./images/usopp/smile-usopp.jpg"
         },
         {
         "id": "110",
         "nombre":"Producto 10",
         "precio": "400",
         "stock": "20",
-        "imagen": "usopp/zicon2-usopp.png"
+        "imagen": "./images/usopp/zicon2-usopp.png"
         },
         {
         "id": "111",
         "nombre":"Producto 11",
         "precio": "500",
         "stock": "25",
-        "imagen": "usopp/god-usopp.jpg"
+        "imagen": "./images/usopp/god-usopp.jpg"
         }
                                             
             
@@ -138,7 +138,8 @@
         "nombre":"Producto 1",
         "precio": "250",
         "stock": "15",
-        "imagen": "sanji/sanji-3.jpg"
+        "imagen": "./images/sanji/sanji-3.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
 
         {
@@ -146,91 +147,104 @@
         "nombre":"Producto 2",
         "precio": "550",
         "stock": "8",
-        "imagen": "sanji/sanji-angry.jpg"
+        "imagen": "./images/sanji/sanji-angry.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
-        "id": "103",
+        "id": "203",
         "nombre":"Producto 3",
         "precio": "800",
         "stock": "5",
-        "imagen": "sanji/sanji-germa.jpg"
+        "imagen": "./images/sanji/sanji-germa.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
         "id": "204",
         "nombre":"Producto 4",
         "precio": "100",
         "stock": "10",
-        "imagen": "sanji/sanji-kid3.jpg"
+        "imagen": "./images/sanji/sanji-kid3.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
         "id": "205",
         "nombre":"Producto 5",
         "precio": "600",
         "stock": "8",
-        "imagen": "sanji/sanji-heart.jpg"
+        "imagen": "./images/sanji/sanji-heart.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
         "id": "206",
         "nombre":"Producto 6",
         "precio": "500",
         "stock": "20",
-        "imagen": "sanji/sanji-kid.jpg"
+        "imagen": "./images/sanji/sanji-kid.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
 
         {"id": "207",
         "nombre":"Producto 7",
         "precio": "950",
         "stock": "18",
-        "imagen": "sanji/sanji-kid2.jpg"
+        "imagen": "./images/sanji/sanji-kid2.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
         "id": "208",
         "nombre":"Producto 8",
         "precio": "350",
         "stock": "25",
-        "imagen": "sanji/sanjii.jpg"
+        "imagen": "./images/sanji/sanjii.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
         "id": "209",
         "nombre":"Producto 9",
         "precio": "500",
         "stock": "8",
-        "imagen": "sanji/sanji-nami.jpg"
+        "imagen": "./images/sanji/sanji-nami.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
         "id": "210",
         "nombre":"Producto 10",
         "precio": "1000",
         "stock": "10",
-        "imagen": "sanji/sanji-pervert.jpg"
+        "imagen": "./images/sanji/sanji-pervert.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
         "id": "211",
         "nombre":"Producto 11",
         "precio": "1000",
         "stock": "14",
-        "imagen": "sanji/sanji-smile.jpg"
+        "imagen": "./images/sanji/sanji-smile.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
         "id": "212",
         "nombre":"Producto 12",
         "precio": "350",
         "stock": "8",
-        "imagen": "sanji/sanji-wtf.jpg"
+        "imagen": "./images/sanji/sanji-wtf.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
             },
         {
         "id": "213",
         "nombre":"Producto 13",
         "precio": "200",
         "stock": "22",
-        "imagen": "sanji/sanji-wanted.jpg"
+        "imagen": "./images/sanji/sanji-wanted.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         },
         {
         "id": "214",
         "nombre":"Producto 14",
         "precio": "150",
         "stock": "29",
-        "imagen": "sanji/sanji-ok.jpg"
+        "imagen": "./images/sanji/sanji-ok.jpg",
+        "detalles": "Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose"
         }
                                             
             

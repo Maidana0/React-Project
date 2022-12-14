@@ -29,7 +29,7 @@
 
 
 
-    .cart-list, .cart-product {
+    .cart-item, .cart-result {
         background-color: white;
         @include flex-center;
         min-height: 5rem;
@@ -39,14 +39,14 @@
         margin: 5px auto 20px;
         box-shadow: -1px 2px 5px 1px $bg-dark;
     }
-    .cart-list{
+    .cart-item{
         width: 80%;
         border-color: $primary-color;
         @include flex-center;
         flex-direction: row;
         justify-content: space-around;
     }
-    .cart-product{
+    .cart-result{
         width: auto;
         padding: 0 50px;
         border-color: $secundary-color;

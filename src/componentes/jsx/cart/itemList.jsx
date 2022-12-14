@@ -16,13 +16,15 @@ export const ItemList = ()=>{
         </div>
     
 
-          
+        <div className="cart-item">
+            Producto 9
+        </div>
             
 
-        <div className="cart-product">
-
+        <div className="cart-result">
+            Total {ars.format(2462)}
         </div>
-    
+
 
     </div>       
     </>)

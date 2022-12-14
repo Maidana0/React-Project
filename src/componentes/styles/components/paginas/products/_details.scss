@@ -1,0 +1,100 @@
+.detalles{
+            margin: 2rem auto;
+            width: 90%;
+            height: 600px;
+            box-shadow: 0px 0px 20px 8px $content-bg-dark;
+            border: solid 2px $primary-color ;
+            background-color: $primary-color ;
+            &:hover{ transform: scale(1);}
+
+            .prod-img{
+                height: 50%;
+                    img{
+                        border-radius: 18px 18px 0 0;
+                        padding: 0px;
+                    }
+            }
+    
+            .prod-info{
+                width: 100%;
+                flex-direction: column;
+                height: 15%;   
+
+            }
+    
+            .nombre-prod, .precio-prod{
+                justify-content:center;
+                text-align: center;
+            }
+                .nombre-prod{
+                    width: 100%;
+                    font-size: 1.9em;
+                }
+                .precio-prod{
+                    margin-right: 0;
+                    width: auto;
+                    padding: 5px 40px;
+                    font-size: 1.5em;
+                    box-shadow: none;   
+                    color:$text-w;
+                    font-weight: 700;
+                    background-color:$secundary-color;
+                }
+                .detalles-prod{
+                    height: 15%;
+                    width: 100%;
+                    padding: 0 8px;
+                    margin: 5px auto;
+                    font-size: 1.2em;
+                    color: black;
+                }
+                .btn-prod-cart{
+                    gap: 8px;
+                    height: 20%;
+                }
+                  
+
+            @media ( min-width: 785px ){
+                height: 750px;
+
+                .prod-img{
+                    height: 65%;
+                }
+                .detalles-prod{
+                    height: 12%;
+                }                    
+                .btn-prod-cart{
+                    height: 8%;
+                    gap: 0px;
+                    width: 60%;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin: 0 auto 8px;
+                }
+    
+                    .cont-prod{
+                        height: 100%;
+                        width: 25%;
+                        margin: 0 auto;
+                    }
+                    .stock{
+                        @include flex-center;  
+                        height: 100%;
+                        width: 10%;
+                        text-align: center;
+                        justify-content: center;
+                        margin: 0 auto
+    
+                    }
+                    .agregar-carrito{
+                        border-radius: 100px;
+                        padding: 20px;
+                        color: $text-w;
+                        height: 100%;
+                        width: 30%;
+                        margin: 0 auto;
+                        &:hover{color:$primary-color}
+                    }            
+            }
+
+}    

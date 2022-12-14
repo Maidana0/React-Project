@@ -1,62 +1,106 @@
 import { useState } from 'react';
-import { AiOutlineMinus, AiOutlinePlus, AiFillQuestionCircle, AiOutlineQuestionCircle } from 'react-icons/ai';
+import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import {ars} from '../cart/itemList';
 
 import data from './data.json'
 
-
- const Item = ()=>{
+ export const Item = (props)=>{
     const [contador, setContador] = useState(1)
-    const stock = 5
-    const sumar = ()=>{ stock>contador ? setContador (contador + 1) : console.log('No hay stock')}    
-    const restar = ()=>{ contador > 0 ? setContador (contador -1) : console.log ('No puede restar menos que 0')}
+    const sumar = ()=>{ props.stock>contador ? setContador (contador + 1) : console.log('No hay stock')}    
+    const restar = ()=>{ contador > 1 ? setContador (contador -1) : console.log ('No puede restar menos que 0')}
+    
 
+    const addToList = ()=>{
+       const item = {
+        nombre: props.nombre,
+        precio: ars.format( props.precio ),
+        cantidad: contador,
+        total: ars.format( props.precio * contador )
+        }
+        console.log(item)
+    }
+
+    const MostrarStock =()=><div className='stock'>Stock: {props.stock}</div>
+    const Detalles =()=>{
+        if(props.mostrarDetalles){
+            return  props.detalles
+        }else{
+            return 'Mostrar Detalles'
+        }
+    }
 
     return(
-
-            <div className="producto">
+            <div className={`producto ${props.class}`}>
                 <div className="prod-img">
-                    <img src={require('./images/sanji/sanji-kid.jpg')} />
+                    <img src={require (`${props.img}`)} />
                 </div>
 
                 <div className="prod-info">
-                    <div className="nombre-prod">Producto 1</div>
-                    <div className="precio-prod">{ars.format(5000)}</div>
+                    <div className="nombre-prod">{props.nombre}</div>
+                    <div className="precio-prod">{ars.format(props.precio)}</div>
                 </div>
 
                 <div className="detalles-prod"> 
-                Este producto se caracteriza pro su peculiar forma de reveer las cosas we nose
+                    <Detalles />
                 </div>
 
-
-                <div className='cont-prod'>
-                    <button onClick={restar}><AiOutlineMinus className='btn-cont'  /></button> 
-                    {contador}
-                    <button onClick={sumar}><AiOutlinePlus className='btn-cont' /></button> 
+                <div className='btn-prod-cart'>
+                    <div className='cont-prod'>
+                        <button onClick={restar}><AiOutlineMinus className='btn-cont'  /></button> 
+                        {contador}
+                        <button onClick={sumar}><AiOutlinePlus className='btn-cont' /></button> 
+                    </div>
+                    {props.mostrarDetalles? <MostrarStock/>: ` `}                   
+                    <button className='agregar-carrito' onClick={addToList}>AGREGAR AL CARRITO </button>
                 </div>
-
-                <button className='agregar-carrito'>AGREGAR AL CARRITO </button>
             </div>
 
-        
+            
     )
 }
 
-export const Product = ()=>{
+
+const ItemList = ()=>{
+
+
+
+    return (
+        data.sanji.map ( record => {
+        return (
+            <Item
+            mostrarDetalles= {false}
+            key={record.id}
+            id={record.id} 
+            img={record.imagen}
+            nombre={record.nombre}
+            precio={record.precio}
+            stock={record.stock}
+            detalles= {record.detalles}
+            />
+        )
+        } )
+    )
+}
+
+
+
+export const Productos = ()=>{
     return(
         <div className='category-container'>
-            <div className='lista-productos'>
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
+
+            <img className='img-title' src={require('../../imagenes/sanji.jpg')}/>    
+            <div className="container-title">
+                <h1 className="title"> Sanji Vinsmoke </h1>
             </div>
+
+            <div className='lista-productos'>
+                <ItemList />
+            </div>
+
         </div>
     )
 }
-export default Product
+export default Productos
 
 
 
@@ -81,45 +125,5 @@ export default Product
 
 
 // export const Producto = (props) =>{
-
-//     const [contador, setContador] = useState(1)
-//     const stock = props.stock
-//     const sumar = ()=>{ stock>contador ? setContador (contador + 1) : console.log('No hay stock')}    
-//     const restar = ()=>{ contador > 0 ? setContador (contador -1) : console.log ('No puede restar menos que 0')}
-
-
-//     return (
-//         <div className="producto">             <div className="prod-info">
-//                 <div className="nombre-prod">{props.nombre}</div>
-//                 <div className="precio-prod">{f.format(props.precio)}</div>
-//             </div>
-
-//             <div className='cont-prod'>
-//                 <button onClick={restar}><AiOutlineMinus className='btn-cont'  /></button> 
-//                 {contador}
-//                 <button onClick={sumar}><AiOutlinePlus className='btn-cont' /></button> 
-//             </div>
-
-        
-//             <button className='agregar-carrito'>AGREGAR AL CARRITO </button>
-        
-//         </div>
-//     )
-// }
-
-
-
-
-// export const Lista = (props) =>{
-
-//     return (
-//         <div className="lista-productos">
-//             {props.content}
-//         </div>
-        
-//     )
-// }
-
-
 
 
