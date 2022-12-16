@@ -17,10 +17,10 @@ function App() {
       <main>
       {/* <Home /> */}
 
-      <Productos />
+      {/* <Productos /> */}
       
-      <ItemDetails />
-      {/* <ItemList /> */}
+      {/* <ItemDetails /> */}
+      <ItemList />
       </main>
     </div>
     <Footer />
