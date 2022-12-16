@@ -95,19 +95,27 @@
         @include flex-center;    
         justify-content: center;
         text-align: center;
-        width: 100%;
         height: 8%;
-        padding: 2px 2px;
         font-size: .9em;
         font-weight: 300;
+        cursor: pointer;
         color: gray;
         transition:  ease all .2s;
+        width: auto;
+
+        border-radius: 100px;
+        padding: 10px;
+        margin: 2px auto;
+        &:hover{
+            color: $primary-color;
+            background-color: $secundary-color;
+        }
     }
 
     .btn-prod-cart{
         width: 100%;
         height: 22%;
-        gap: 4px;
+        gap: 6px;
 
         @include flex-center;  
         justify-content: center;
@@ -115,14 +123,15 @@
 
     }
     .cont-prod{
-        height: 40%;
+        height: 35%;
         margin: 0 auto;
         padding: 0;
     }
 
     .agregar-carrito{
+        cursor: pointer;
         width: 100%;
-        height: 60%;
+        height: 65%;
         border-radius: 0 0 18px 18px;
         @include flex-center;  
         justify-content: center;

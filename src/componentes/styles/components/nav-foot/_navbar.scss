@@ -42,9 +42,7 @@ header{
                 padding: 1.4rem 1rem;
                 font-size: 1em;
                 font-weight: 400;
-                    &:hover{
-                        @include hover-d
-                    }
+                @include hover-d
             }
             .focus-item{
                 color: $primary-color;
@@ -69,11 +67,11 @@ header{
                     -webkit-animation:scale-in-top .4s cubic-bezier(.25,.46,.45,.94) both;animation:scale-in-top .4s cubic-bezier(.25,.46,.45,.94) both;
                     @-webkit-keyframes scale-in-top{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}}@keyframes scale-in-top{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}}
                 }
+                @include hover-d;
                 &:hover{
-                    @include hover-d;
                     small{
-                            @include hover-d;
-                    }
+                        background-color: rgba(255, 255, 0, 0.8);
+                        color: $secundary-color;                    }
                 }
                 @media ( max-width: 785px ){
                     small{

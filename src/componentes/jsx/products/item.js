@@ -20,17 +20,21 @@ import data from './data.json'
         console.log(item)
     }
 
-    const MostrarStock =()=><div className='stock'>Stock: {props.stock}</div>
+
     const Detalles =()=>{
         if(props.mostrarDetalles){
             return  props.detalles
         }else{
-            return 'Mostrar Detalles'
+            return <>  Mostrar Detalles  </>
         }
     }
+    const MostrarStock =()=><div className='stock'>Stock: {props.stock}</div>
+
 
     return(
             <div className={`producto ${props.class}`}>
+                {props.mostrarDetalles? props.close: ` `}           
+
                 <div className="prod-img">
                     <img src={require (`${props.img}`)} />
                 </div>
@@ -41,7 +45,9 @@ import data from './data.json'
                 </div>
 
                 <div className="detalles-prod"> 
+
                     <Detalles />
+
                 </div>
 
                 <div className='btn-prod-cart'>
@@ -50,7 +56,7 @@ import data from './data.json'
                         {contador}
                         <button onClick={sumar}><AiOutlinePlus className='btn-cont' /></button> 
                     </div>
-                    {props.mostrarDetalles? <MostrarStock/>: ` `}                   
+                    {props.mostrarDetalles? <MostrarStock /> : ` `}                   
                     <button className='agregar-carrito' onClick={addToList}>AGREGAR AL CARRITO </button>
                 </div>
             </div>
@@ -68,13 +74,14 @@ const ItemList = ()=>{
         data.sanji.map ( record => {
         return (
             <Item
-            mostrarDetalles= {false}
             key={record.id}
             id={record.id} 
             img={record.imagen}
             nombre={record.nombre}
             precio={record.precio}
             stock={record.stock}
+
+            mostrarDetalles= {false}
             detalles= {record.detalles}
             />
         )
