@@ -1,49 +1,48 @@
 import { AiFillCaretDown , AiFillCaretUp} from 'react-icons/ai';
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Seccion = (props)=>{
     return(
-        <a className="seccion container-title">
+        <NavLink className="seccion container-title" to={props.link} end>
             <h1 className="title"> {props.titulo} </h1>
             <img className='img-title' src={props.portada}/>    
-          </a>
+        </NavLink>
     )
 }
 const Secciones =()=>{
     return(<>        
         <Seccion
-        portada={require('../../imagenes/sanji.jpg')}
+        portada={require('../../images/sanji.jpg')}
         titulo='Vinsmoke Sanji'
+        link= '/sanji'
         />
         <Seccion
-        portada={require('../../imagenes/usopp.jpg')}
+        portada={require('../../images/usopp.jpg')}
         titulo='God Usopp'
+        link= '/usopp'
         /> 
         <Seccion 
-        portada={require('../../imagenes/zoro.jpg')}
+        portada={require('../../images/zoro.jpg')}
         titulo='Roronoa Zoro'
+        link= '/zoro'
         />
     </>)
 }
 const List = ()=>{
-    const [list, setList] = useState(<img className='gif' src={require('../../imagenes/loading.gif')}/>)
+    const [list, setList] = useState(<img className='gif' src={require('../../images/loading.gif')}/>)
     setTimeout(()=>{ setList ( <Secciones/>)}, 1500);    
-    return (list)
+    return list
 }
 
 const Welcome = ()=>{
-    const [welc, setWelc] = useState (<img className='gif' src={require('../../imagenes/load.webp')}/>)
-    
-    setTimeout(()=>{ setWelc (()=>{
+    // const [welc, setWelc] = useState (<img className='gif' src={require('../../images/load.webp')}/>)
         return(
         <div className='home-content'>
             <h1 className='home-title'>Bienvenido a nuestro sitio web</h1>
             <p> Se trata de un Proyecto Ecommerce creado con React JS con el objetivo de poner en practica lo aprendido.</p>
-            <img className='home-img' src={require('../../imagenes/sanji2.jpg')} />
+            <img className='home-img' src={require('../../images/sanji2.jpg')} />
         </div>)
-    })}, 1900);    
-
-    return(welc)
 }
 
 const OpenCategory = ()=>{
@@ -86,7 +85,6 @@ export const Home = ()=>{
     return (<>
         <div className="home">
             <HomeBtn />
-            {/* <img className='gif' src={require('../../imagenes/sanji.gif')} /> */}
         </div>
         </>
     )

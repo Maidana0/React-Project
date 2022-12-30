@@ -13,35 +13,77 @@
         "nombre":"Producto 2",
         "precio": "1500",
         "stock": "15",
-        "imagen": "./images/zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro-angry.jpg"
         },
         {
         "id": "3",
         "nombre":"Producto 3",
         "precio": "500",
         "stock": "28",
-        "imagen": "./images/zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro-crying.jpg"
         },
         {
         "id": "4",
         "nombre":"Producto 4",
         "precio": "500",
         "stock": "8",
-        "imagen": "./images/zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro-dead.jpg"
         },
         {
         "id": "5",
         "nombre":"Producto 5",
         "precio": "800",
         "stock": "10",
-        "imagen": "./images/zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro-drinked.jpg"
         },
         {
         "id": "6",
         "nombre":"Producto 6",
-        "precio": "450",
+        "precio": "350",
         "stock": "25",
-        "imagen": "./images/zoro/zoro.jpg"
+        "imagen": "./images/zoro/zoro-happy.jpg"
+        },
+        {
+        "id": "7",
+        "nombre":"Producto 7",
+        "precio": "450",
+        "stock": "35",
+        "imagen": "./images/zoro/zoro-kid.jpg"
+        },
+        {
+        "id": "8",
+        "nombre":"Producto 8",
+        "precio": "600",
+        "stock": "15",
+        "imagen": "./images/zoro/zoro-kid2.jpg"
+        },
+        {
+        "id": "9",
+        "nombre":"Producto 9",
+        "precio": "300",
+        "stock": "28",
+        "imagen": "./images/zoro/zoro-random.jpg"
+        },
+        {
+        "id": "10",
+        "nombre":"Producto 10",
+        "precio": "250",
+        "stock": "30",
+        "imagen": "./images/zoro/zoro-scary.jpg"
+        },
+        {
+        "id": "11",
+        "nombre":"Producto 11",
+        "precio": "400",
+        "stock": "18",
+        "imagen": "./images/zoro/zoro-serio.jpg"
+        },
+        {
+        "id": "12",
+        "nombre":"Producto 12",
+        "precio": "800",
+        "stock": "15",
+        "imagen": "./images/zoro/zoro-smile.jpg"
         }
                                             
             

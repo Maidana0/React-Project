@@ -1,10 +1,15 @@
 import { Item } from "../products/item"
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { NavLink} from 'react-router-dom';
 
 
 export const ItemDetails = ()=>{
 
-    const CloseDetails =()=><AiOutlineCloseCircle className='close-circle'/>
+    const CloseDetails =()=>{return(
+        <NavLink /*end to={`/${props.category}`} */ >
+            <AiOutlineCloseCircle className='close-circle'/>
+        </NavLink>
+    )}
     
     return(
         <Item 
