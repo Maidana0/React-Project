@@ -46,6 +46,7 @@
         justify-content: center;
         text-align: center;
         width: auto;
+        cursor: pointer;
         &:hover{@include hover-d;}
         p{           
             margin: 0 5px;

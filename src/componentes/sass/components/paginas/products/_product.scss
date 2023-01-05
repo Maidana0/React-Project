@@ -8,6 +8,10 @@
     margin: .5rem auto;
     width: 95%;  
     transition: ease all 1s;
+
+
+    -webkit-animation:fade-in 1.4s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.4s cubic-bezier(.39,.575,.565,1.000) both;
+    @-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 }
 
 .lista-productos{

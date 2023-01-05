@@ -61,8 +61,9 @@ const CloseCategory = ()=>{
     </>)
 }
 
-
 export const Home = ()=>{
+    window.scrollTo(0, 0)
+
     const [category, setCategory] = useState(false)
     const [desplegar, setDesplegar] = useState(true)
     const Inicio = ()=>{return( category? <List /> : <Welcome />)}

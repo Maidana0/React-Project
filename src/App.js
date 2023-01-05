@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Header from './componentes/jsx/nav-foot/Header'
 
@@ -21,14 +21,19 @@ function App() {
 
       <div className="App">
         <Routes>
-          <Route exact path='/' element={<Home />} />
+          <Route  path='/*' element={<Home />} />
           <Route exact path='/home' element={<Home />} />
 
           <Route exact path='/sanji' element={<Sanji />} />
 
-          <Route path='/zoro' element={<Zoro />} />
+          <Route exact path='/zoro' element={<Zoro />} />
 
           <Route exact path='/usopp' element={<Usopp />} />
+
+
+          <Route exact path='/:category/product/:id' element={<ItemDetails/> } />
+
+
 
           <Route exact path='/cart' element={<ItemList />} />
 
@@ -37,17 +42,16 @@ function App() {
 
       <Footer />
       <ToastContainer
-position="bottom-right"
-autoClose={2000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable={false}
-
-theme="dark"
-/>
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        theme="dark"
+      />
     </Router>
   )
 }

@@ -1,6 +1,5 @@
 import { Item, Productos } from "../products/item";
 import data from "../products/data.json"
-import { total } from "../products/item";
 
 
 
@@ -28,6 +27,7 @@ import { total } from "../products/item";
 }
 
 export const SanjiCategory =()=>{
+    window.scrollTo(0, 0)
     return(
 
         <Productos 

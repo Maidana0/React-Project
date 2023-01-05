@@ -10,10 +10,6 @@ import { ars } from '../cart/ItemList';
 export const Item = (props) => {
     const [contador, setContador] = useState(1)
 
-    const Detalles = () => (props.mostrarDetalles ? props.detalles : "Mostrar Detalles")
-    const MostrarStock = () => <div className='stock'>Stock: {props.stock}</div>
-
-
     return (
         <div className={`producto ${props.class ? props.class : ""}`}>
             {props.mostrarDetalles ? props.close : ` `}
@@ -27,8 +23,8 @@ export const Item = (props) => {
                 <div className="precio-prod">{ars.format(props.precio)}</div>
             </div>
 
-            <Link className="detalles-prod" >
-                <Detalles />
+            <Link className="detalles-prod" to={`/${props.category}/product/${props.id}`}>
+                {props.mostrarDetalles ? props.detalles : "Mostrar Detalles"}
             </Link>
 
             <div className='btn-prod-cart'>
@@ -37,7 +33,10 @@ export const Item = (props) => {
                     cont={contador}
                     setcont={setContador}
                 />
-                {props.mostrarDetalles ? <MostrarStock /> : ` `}
+                {props.mostrarDetalles
+                    ? <div className='stock'>Stock: {props.stock}</div>
+                    : ` `
+                }
                 <AddToList
                     cantidad={contador}
                     id={props.id}
@@ -46,7 +45,7 @@ export const Item = (props) => {
                     categoria={props.category}
                 />
             </div>
-           
+
         </div>
 
 

@@ -1,7 +1,6 @@
 import { Item, Productos } from "../products/item";
 import data from "../products/data.json"
 
-import { total } from "../products/item";
 
 
  const UsoppItemList = ()=>{
@@ -26,6 +25,7 @@ import { total } from "../products/item";
 }
 
 export const UsoppCategory =()=>{
+    window.scrollTo(0, 0)
     return(
 
         <Productos 
