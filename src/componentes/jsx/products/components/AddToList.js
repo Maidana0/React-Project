@@ -6,7 +6,7 @@ import CartContext from '../../cart/CartContext';
 export const AddToList =  (props) => {
     const { cantidad, id, precio, nombre, categoria, detalles } = props
 
-    const cart = useContext(CartContext)
+    const {cart, addProduct} = useContext(CartContext)
 
     const addToCart = () => {
         const repetido = cart.some(productito => productito.id === id)
@@ -26,8 +26,7 @@ export const AddToList =  (props) => {
                 detalles,
                 categoria
             }
-
-            cart.push(item)
+            addProduct(item)
         }
 
         Toastify()

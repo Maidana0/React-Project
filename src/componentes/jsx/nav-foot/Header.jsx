@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import CartContext from '../cart/CartContext';
 
 const Header = ()=>{
-    const cart = useContext(CartContext)
+    const {cart} = useContext(CartContext)
     const CartWidget = ()=>{
         if(cart.length >=1 ){
             return(<small>{cart.length}</small>)

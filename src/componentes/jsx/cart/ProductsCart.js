@@ -4,7 +4,7 @@ import { ars } from './ItemList';
 
 
 const ProductsCart = () => {
-    const cart = useContext(CartContext)
+    const {cart} = useContext(CartContext)
 
     return (
         <>
