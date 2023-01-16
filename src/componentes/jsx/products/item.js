@@ -43,6 +43,7 @@ export const Item = (props) => {
                     precio={props.precio}
                     nombre={props.nombre}
                     categoria={props.category}
+                    detalles={props.detalles}
                 />
             </div>
 

@@ -2,10 +2,15 @@ import { Turn as Hamburger } from 'hamburger-react'
 import {  AiFillHome, AiFillInfoCircle, AiFillShop, AiOutlineShoppingCart} from 'react-icons/ai';
 import { NavLink} from 'react-router-dom';
 
+
+import { useContext } from 'react';
+import CartContext from '../cart/CartContext';
+
 const Header = ()=>{
-    const CartWidget = (props)=>{
-        if(props.items){
-            return(<small>{props.items}</small>)
+    const cart = useContext(CartContext)
+    const CartWidget = ()=>{
+        if(cart.length >=1 ){
+            return(<small>{cart.length}</small>)
         } else{return(" ")}
     }
 
@@ -40,7 +45,7 @@ return (
 
                     <NavLink end className='link-shop' to={'/cart'}>
                         <AiOutlineShoppingCart/>
-                        <CartWidget items={10}/>
+                        <CartWidget />
                     </NavLink>
                 </li>
 

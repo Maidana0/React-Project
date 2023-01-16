@@ -1,8 +1,6 @@
+import ProductsCart from "./ProductsCart";
 
-// const carrito = JSON.parse(localStorage.getItem ('carrito'))
-
-
-export const ars = new Intl.NumberFormat ('es-AR', {
+export const ars = new Intl.NumberFormat('es-AR', {
     style: 'currency',
     currency: 'ARS',
     minimumFractionDigits: 0
@@ -10,24 +8,19 @@ export const ars = new Intl.NumberFormat ('es-AR', {
 
 
 
-export const ItemList = ()=>{
+export const ItemList = () => {
 
     return (<>
-    <div className="container-carrito">
-        <div className="container-title">
-            <h1 className="title"> Carrito de compras </h1>
-        </div>
+        <div className="container-carrito">
+            <div className="container-title">
+                <h1 className="title"> Carrito de compras </h1>
+            </div>
 
-        <div className="cart-item">
-            Producto 9
-        </div>
-            
+            <ProductsCart />
 
-        <div className="cart-result">
-            Total {ars.format(2462)}
-        </div>
 
-    </div>       
+
+        </div>
     </>)
 }
 

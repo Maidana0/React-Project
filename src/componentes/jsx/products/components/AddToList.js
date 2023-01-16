@@ -1,58 +1,38 @@
-import { ars } from '../../cart/ItemList';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import {Toastify} from './Toast'
+import { useContext } from 'react';
+import CartContext from '../../cart/CartContext';
 
 
+export const AddToList =  (props) => {
+    const { cantidad, id, precio, nombre, categoria, detalles } = props
 
-export const total = []
-
-export const AddToList = (props) => {
-    const { cantidad, id, precio, nombre, categoria } = props
-
-    const mensajito = () => {
-        toast.success('Agregado al Carrito!', {
-            position: "bottom-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-            theme: "dark",
-            style: {
-                color: "yellow",
-                borderRadius: "18px",
-                fontWeight: "600",
-                fontSize: ".85em",
-            }
-        });
-    }
+    const cart = useContext(CartContext)
 
     const addToCart = () => {
-        const repetido = total.some(productito => productito.id === id)
+        const repetido = cart.some(productito => productito.id === id)
 
 
         if (repetido) {
-            const este = total.find(prod => prod.id === id)
+            const este = cart.find(prod => prod.id === id)
             este.cantidad += cantidad
             este.total += precio * cantidad
         } else {
             const item = {
                 nombre,
-                precio: ars.format(precio),
+                precio,
                 cantidad,
                 total: precio * cantidad,
                 id,
+                detalles,
                 categoria
             }
 
-            total.push(item)
-
+            cart.push(item)
         }
 
-        mensajito()
-        console.log(total)
-        // localStorage.setItem ('carrito', JSON.stringify (total) ) ESTE NO ES ASI XD
+        Toastify()
+        console.log(cart)
+        localStorage.setItem ('carrito', JSON.stringify (cart) )
     }
 
 
