@@ -1,12 +1,11 @@
-import {Toastify} from './Toast'
-import { useContext } from 'react';
-import CartContext from '../../cart/CartContext';
+import {Toastify } from './Toast'
+import {UseCartContext} from '../../cart/components/CartContext';
 
 
 export const AddToList =  (props) => {
     const { cantidad, id, precio, nombre, categoria, detalles } = props
 
-    const {cart, addProduct} = useContext(CartContext)
+    const {cart, addProduct} = UseCartContext()
 
     const addToCart = () => {
         const repetido = cart.some(productito => productito.id === id)
@@ -30,7 +29,6 @@ export const AddToList =  (props) => {
         }
 
         Toastify()
-        console.log(cart)
         localStorage.setItem ('carrito', JSON.stringify (cart) )
     }
 

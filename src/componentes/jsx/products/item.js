@@ -5,7 +5,7 @@ import Contador from './components/Contador.js';
 import AddToList from './components/AddToList';
 
 
-import { ars } from '../cart/ItemList';
+import { ars } from '../cart/components/CartContext';
 
 export const Item = (props) => {
     const [contador, setContador] = useState(1)
@@ -57,7 +57,7 @@ export const Productos = (props) => {
     return (
         <div className='category-container'>
 
-            <img className='img-title' src={require(`../../images/${props.image}`)} />
+            <img className='img-title' alt={props.title} src={require(`../../images/${props.image}`)} />
             <div className="container-title">
                 <h1 className="title">{props.title}</h1>
             </div>

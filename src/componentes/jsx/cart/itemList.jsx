@@ -1,25 +1,22 @@
-import ProductsCart from "./ProductsCart";
-
-export const ars = new Intl.NumberFormat('es-AR', {
-    style: 'currency',
-    currency: 'ARS',
-    minimumFractionDigits: 0
-});
-
-
+import {UseCartContext} from './components/CartContext';
+import EmptyCart from "./components/EmptyCart";
+import ProductsCart from "./components/ProductsCart";
 
 export const ItemList = () => {
+    const { cart } = UseCartContext()
 
     return (<>
         <div className="container-carrito">
             <div className="container-title">
-                <h1 className="title"> Carrito de compras </h1>
+                <h1 className="title"> Carrito <span>de compras</span> </h1>
             </div>
 
-            <ProductsCart />
-
-
-
+            {
+                cart.length >= 1
+                    ? <ProductsCart />
+                    : <EmptyCart />
+            }
+            
         </div>
     </>)
 }

@@ -13,22 +13,11 @@ import Usopp from './componentes/jsx/pages-products/Usopp';
 
 import { ToastContain } from './componentes/jsx/products/components/Toast';
 import Footer from './componentes/jsx/nav-foot/Footer'
-
-import CartContext from './componentes/jsx/cart/CartContext';
-import { useState } from 'react';
+import {CartProvider} from './componentes/jsx/cart/components/CartContext';
 
 function App() {
-  const cartStorage = JSON.parse(localStorage.getItem ('carrito'))?
-              JSON.parse(localStorage.getItem ('carrito'))
-              : []
-  const [cart, setCart] = useState(cartStorage)
-
-  const addProduct =(item)=>{
-    setCart([...cart, item])
-  }
   return (
-    <CartContext.Provider value={{cart,addProduct}}>
-
+    <CartProvider>
       <Router>
         <Header />
 
@@ -55,8 +44,7 @@ function App() {
         <Footer />
         <ToastContain />
       </Router>
-
-    </CartContext.Provider >
+    </CartProvider>
 
   )
 }
