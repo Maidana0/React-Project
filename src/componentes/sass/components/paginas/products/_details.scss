@@ -93,6 +93,14 @@
                     border: solid .5px  $secundary-color;
                     box-shadow: 0 0 2px 1px  $primary-color;
                 }
+                .btn-cont{
+                    color: white;
+                    transition: all .5s;
+                    &:hover{
+                        color: black;
+                        background-color: white;
+                    }
+                }
                 .nombre-prod{
                     color: $text-w;
                 }

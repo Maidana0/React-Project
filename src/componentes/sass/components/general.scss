@@ -36,3 +36,58 @@ button{
     border:none;
     background: none;
 }
+.error{
+    
+    @include flex-center;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    background: $bg-dark;
+    padding: 20px;
+    border-radius: 20px;
+    border: solid .5px $primary-color;
+    margin:  3rem auto;
+    box-shadow: 0px 0px 12px 5px $bg-dark;
+
+    -webkit-animation: scale-in-center .5s cubic-bezier(.25, .46, .45, .94) both;
+    animation: scale-in-center .5s cubic-bezier(.25, .46, .45, .94) both;
+    @-webkit-keyframes scale-in-center {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            opacity: 1
+        }
+
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+    }
+    @keyframes scale-in-center {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            opacity: 1
+        }
+
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+    }
+    h2{
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        margin: 1rem 1.5rem 0;
+
+    }
+    img{
+        margin: 0 auto;
+        width: 50%;
+        height: 100%;
+        object-fit:contain;
+    }
+}

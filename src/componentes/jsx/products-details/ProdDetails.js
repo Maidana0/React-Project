@@ -4,6 +4,9 @@ import { NavLink, useParams} from 'react-router-dom';
 import Search from "./Search";
 
 
+
+
+
 export const ItemDetails = ()=>{
     window.scrollTo(0, 0)
 
@@ -20,7 +23,10 @@ export const ItemDetails = ()=>{
         producto ?
        
             producto.error? 
-            <h1>{producto.error}</h1> //ARREGLAR ESTOOO
+            <div className="error">
+                <h2>{producto.error}</h2> 
+                <img src={require('../../images/error.png')}/>
+            </div>
             :
             <Item 
             category={category}
@@ -30,7 +36,7 @@ export const ItemDetails = ()=>{
             precio= {producto.precio }
             stock=  {producto.stock  }
             detalles= {producto.detalles}
-            class= {'detalles'}
+            classe= {'detalles'}
             mostrarDetalles= {true}
             close= { <CloseDetails/>}
             />

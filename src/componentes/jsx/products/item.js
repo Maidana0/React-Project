@@ -9,41 +9,42 @@ import { ars } from '../cart/components/CartContext';
 
 export const Item = (props) => {
     const [contador, setContador] = useState(1)
+    const {classe, mostrarDetalles, close, img, nombre, category, precio, id, detalles, stock} = props
 
     return (
-        <div className={`producto ${props.class ? props.class : ""}`}>
-            {props.mostrarDetalles ? props.close : ` `}
+        <div className={`producto ${classe ? classe : ""}`}>
+            {mostrarDetalles ? close : ` `}
 
             <div className="prod-img">
-                <img src={require(`${props.img}`)} alt={"imagen del " + props.name} />
+                <img src={require(`${img}`)} alt={"imagen del " + nombre} />
             </div>
 
             <div className="prod-info">
-                <div className="nombre-prod">{props.nombre} {props.mostrarDetalles && `|| ${props.category}`}</div>
-                <div className="precio-prod">{ars.format(props.precio)}</div>
+                <div className="nombre-prod">{nombre} {mostrarDetalles && `|| ${category}`}</div>
+                <div className="precio-prod">{ars.format(precio)}</div>
             </div>
 
-            <Link className="detalles-prod" to={`/${props.category}/product/${props.id}`}>
-                {props.mostrarDetalles ? props.detalles : "Mostrar Detalles"}
+            <Link className="detalles-prod" to={`/${category}/product/${id}`}>
+                {mostrarDetalles ? detalles : "Mostrar Detalles"}
             </Link>
 
             <div className='btn-prod-cart'>
                 <Contador
-                    stock={props.stock}
+                    stock={stock}
                     cont={contador}
                     setcont={setContador}
                 />
-                {props.mostrarDetalles
-                    ? <div className='stock'>Stock: {props.stock}</div>
+                {mostrarDetalles
+                    ? <div className='stock'>Stock: {stock}</div>
                     : ` `
                 }
                 <AddToList
                     cantidad={contador}
-                    id={props.id}
-                    precio={props.precio}
-                    nombre={props.nombre}
-                    categoria={props.category}
-                    detalles={props.detalles}
+                    id
+                    precio
+                    nombre
+                    categoria
+                    detalles
                 />
             </div>
 

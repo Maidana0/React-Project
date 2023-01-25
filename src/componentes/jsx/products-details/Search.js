@@ -19,7 +19,7 @@ export const Search = (category, id) => {
     if(listCategory){
         const getProd = listCategory.find(prod => prod.id === id) 
         return(
-            getProd ? getProd : {"error": `El producto con el ID: ${id} no se encuentra en nuestra base de datos.`}
+            getProd ? getProd : {"error": `El producto con el ID: ${id} no se encuentra en nuestra base de datos!!`}
         )
     }
     else{ return false}
