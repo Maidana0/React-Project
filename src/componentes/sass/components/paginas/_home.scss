@@ -93,14 +93,27 @@
     margin: 50px auto;
     border-radius:100% ;
     height: auto;
+    width: 40%;
     border: solid 1px $complementary-color;
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-    max-width: 300px;
     object-fit: cover;
    -webkit-animation:slide-in-top .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-top .5s cubic-bezier(.25,.46,.45,.94) both;
    @-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
+    @media ( max-width: 785px ){
+        width: 80%;
+    }
 }
+.gif-sanji{
+    width: auto;
+    height: 350px;
+    object-fit: contain;
+    padding: 0 2rem;
+    background-color: rgba(99, 99, 99, 0.37);
+    border: solid 0.5px $primary-color;
+    box-shadow: 0 0 12px 0.5px $secundary-color;
+    -webkit-animation:slide-in-top .3s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-top .3s cubic-bezier(.25,.46,.45,.94) both;
 
+}
 .img-title{
     width: 100%;
     max-height: 300px;

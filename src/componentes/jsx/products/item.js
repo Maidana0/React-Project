@@ -19,7 +19,7 @@ export const Item = (props) => {
             </div>
 
             <div className="prod-info">
-                <div className="nombre-prod">{props.nombre}</div>
+                <div className="nombre-prod">{props.nombre} {props.mostrarDetalles && `|| ${props.category}`}</div>
                 <div className="precio-prod">{ars.format(props.precio)}</div>
             </div>
 

@@ -1,18 +1,33 @@
-import listProducts from '../products/data.json'
+import { ListProducts } from '../../../firebase/config'
+import { useState, useEffect } from 'react'
 
 
-export const Search = (id)=>{
-    const sanji =  (Object.values(listProducts.sanji)).find(prod => prod.id === id)
-    const usopp =  (Object.values(listProducts.usopp)).find(prod => prod.id === id)
-    const zoro  =  (Object.values(listProducts.zoro)).find(prod => prod.id === id)
-       
-        if(sanji)   return sanji
-        if(usopp)   return usopp
-        if(zoro)    return zoro
 
-        else{
-            return console.log("Error, categoria no encontrada")
+export const Search = (category, id) => {
+
+    const [listCategory, setLlistCategory] = useState(false)
+    useEffect(()=>{
+        return async()=> {
+            const lista = await ListProducts(`${category}List`)
+            setLlistCategory(lista)
         }
+    },[])
+
+   
+
+    const productoFinal =()=>{
+    if(listCategory){
+        const getProd = listCategory.find(prod => prod.id === id) 
+        return(
+            getProd ? getProd : {"error": `El producto con el ID: ${id} no se encuentra en nuestra base de datos.`}
+        )
     }
+    else{ return false}
+    }
+    
+
+    return productoFinal()
+
+}
 
 export default Search

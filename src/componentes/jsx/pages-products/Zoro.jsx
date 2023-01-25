@@ -1,26 +1,42 @@
 import { Item, Productos } from "../products/item";
-import data from "../products/data.json"
-
+import { ListProducts } from "../../../firebase/config";
+import { useEffect, useState } from "react";
 
 
  const ZoroItemList = ()=>{
+    const [lista, setLista] = useState(false)
+    useEffect(()=>{
+        return async()=> {
+            const lista = await ListProducts('zoroList')
+            setLista(lista)
+        }
+    },[])
+
+
+
+
         return (
-            data.zoro.map ( record => {
-            return (
-                <Item
-                category="zoro"
-                key={record.id}
-                id={record.id} 
-                img={record.imagen}
-                nombre={record.nombre}
-                precio={record.precio}
-                stock={record.stock}
+            lista ? 
+            lista.map ( record => {
+                return (
+                    <Item
+                    category="zoro"
+                    key={record.id}
+                    id={record.id} 
+                    img={record.imagen}
+                    nombre={record.nombre}
+                    precio={record.precio}
+                    stock={record.stock}
+                    
+                    mostrarDetalles= {false}
+                    detalles= {record.detalles}
     
-                mostrarDetalles= {false}
-                detalles= {record.detalles}
-                />
-            )
-            } )
+                    />
+                )
+                } )
+            :           
+            <img className='gif gif-sanji'
+             src={require('../../images/loading-sanji.gif')} />
         )
 }
 

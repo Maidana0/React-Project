@@ -1,16 +1,15 @@
 .detalles{
-    -webkit-animation:slide-in-fwd-center .7s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-fwd-center .7s cubic-bezier(.25,.46,.45,.94) both;
+    -webkit-animation:slide-in-fwd-center 1s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-fwd-center 1s cubic-bezier(.25,.46,.45,.94) both;
     @-webkit-keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+            gap: 5px;
             margin: 2rem auto;
             width: 90%;
-            height: 600px;
+            min-height: 700px;
             box-shadow: 0px 0px 20px 8px $content-bg-dark;
             border: solid 2px $primary-color ;
             background-color: $primary-color ;
-
             &:hover{ transform: none;
             }
-
             .close-circle{
                 color:yellow;
                 background-color: black;
@@ -28,8 +27,6 @@
 
             .prod-img{
                 height: 50%;
-
-
                     img{
                         border-radius: 18px 18px 0 0;
                         padding: 0px;
@@ -64,29 +61,50 @@
                 .detalles-prod{
                     height: 15%;
                     width: 100%;
-                    padding: 0 8px;
-                    margin: 5px auto;
+                    padding: .5rem 12px;
                     font-size: 1.2em;
                     color: black;
                     cursor: default;
                     border-radius: 0px;
                     pointer-events: none;
+                    margin: .5rem auto;
 
                 }
                 .btn-prod-cart{
                     gap: 8px;
                     height: 20%;
+
                 }
                   
 
             @media ( min-width: 785px ){
-                height: 750px;
-
+                &:hover{
+                    .detalles-prod{
+                        color: $text-w;
+                    }
+                }
+                min-height: 750px;
+                gap: 0px;
+                background-color: rgba(0, 0, 0, 0.85);
+                color: $text-w;
+                .precio-prod{
+                    background-color: $primary-color;
+                    color: $secundary-color;
+                    border: solid .5px  $secundary-color;
+                    box-shadow: 0 0 2px 1px  $primary-color;
+                }
+                .nombre-prod{
+                    color: $text-w;
+                }
                 .prod-img{
                     height: 65%;
                 }
                 .detalles-prod{
                     height: 12%;
+                    margin: 1rem auto;
+                    padding: 0 3.5rem;
+                    color: $text-w;
+
                 }                    
                 .btn-prod-cart{
                     height: 8%;
@@ -112,15 +130,20 @@
     
                     }
                     .agregar-carrito{
+                        background-color:$primary-color;
+                        border: solid 1.5px  $secundary-color;
+                        box-shadow: 0 0 6px 2px $primary-color;
                         border-radius: 100px;
-                        padding: 20px;
-                        color: $text-w;
+                        padding: 30px 20px;
+                        color: $secundary-color;
                         height: 100%;
                         width: 30%;
                         margin: 0 auto;        
-                        transition: all ease .4s;       
-                        &:hover{color:$primary-color;
-                        transform:scale(1.05)}
+                        transition: all ease .5s;       
+                        &:hover{
+                            color:$primary-color;
+                            background-color: black;
+                        }
                     }            
             }
 
