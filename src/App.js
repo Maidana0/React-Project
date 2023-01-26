@@ -6,9 +6,7 @@ import { ItemList } from './componentes/jsx/cart/ItemList';
 
 import { ItemDetails } from './componentes/jsx/products-details/ProdDetails';
 
-import Sanji from './componentes/jsx/pages-products/Sanji';
-import Zoro from './componentes/jsx/pages-products/Zoro';
-import Usopp from './componentes/jsx/pages-products/Usopp';
+import CategoryList from './componentes/jsx/pages-products/CategoryList';
 
 
 import { ToastContain } from './componentes/jsx/products/components/Toast';
@@ -23,20 +21,17 @@ function App() {
 
         <div className="App">
           <Routes>
-            <Route path='/*' element={<Home />} />
             <Route exact path='/home' element={<Home />} />
 
-            <Route exact path='/sanji' element={<Sanji />} />
-
-            <Route exact path='/zoro' element={<Zoro />} />
-
-            <Route exact path='/usopp' element={<Usopp />} />
+            <Route exact path='/category/:category' element={<CategoryList />} />
 
 
             <Route exact path='/:category/product/:id' element={<ItemDetails />} />
 
 
             <Route exact path='/cart' element={<ItemList />} />
+
+            <Route path='/*' element={<Home />} /> 
 
           </Routes>
         </div>

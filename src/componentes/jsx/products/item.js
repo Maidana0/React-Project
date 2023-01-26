@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import Contador from './components/Contador.js';
 import AddToList from './components/AddToList';
-
-
 import { ars } from '../cart/components/CartContext';
 
 export const Item = (props) => {
     const [contador, setContador] = useState(1)
-    const {classe, mostrarDetalles, close, img, nombre, category, precio, id, detalles, stock} = props
+    const { classe, mostrarDetalles, close, img,
+        nombre, category, precio, id, detalles, stock } = props
 
     return (
         <div className={`producto ${classe ? classe : ""}`}>
@@ -54,17 +52,17 @@ export const Item = (props) => {
     )
 }
 
-export const Productos = (props) => {
+export const Productos = ({ title, image, list }) => {
     return (
         <div className='category-container'>
 
-            <img className='img-title' alt={props.title} src={require(`../../images/${props.image}`)} />
+            <img className='img-title' alt={title} src={require(`../../images/${image}`)} />
             <div className="container-title">
-                <h1 className="title">{props.title}</h1>
+                <h1 className="title">{title}</h1>
             </div>
 
             <div className='lista-productos'>
-                {props.list}
+                {list}
             </div>
 
         </div>

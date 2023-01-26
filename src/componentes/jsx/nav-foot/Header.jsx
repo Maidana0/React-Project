@@ -27,13 +27,13 @@ return (
                     <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" } to={'/home'} > 
                         <AiFillHome /> Home 
                     </NavLink>
-                    <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }  to={'/sanji'}>
+                    <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }  to={'/category/sanji'}>
                         <AiFillShop /> Category 1     
                         </NavLink>
-                    <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }   to={'/zoro'} >
+                    <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }   to={'/category/zoro'} >
                         <AiFillShop />Category 2      
                     </NavLink>
-                    <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }   to={'/usopp'} >
+                    <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }   to={'/category/usopp'} >
                         <AiFillShop />Category 3     
                     </NavLink>
                     {/* <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }>

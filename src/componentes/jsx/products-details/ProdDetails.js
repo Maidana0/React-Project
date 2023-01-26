@@ -15,7 +15,7 @@ export const ItemDetails = ()=>{
     const producto = Search(category,id)
 
     const CloseDetails =()=>{return(
-        <NavLink end to={`/${category}`}  >
+        <NavLink end to={`/category/${category}`}  >
             <AiOutlineCloseCircle className='close-circle'/>
         </NavLink>
     )}

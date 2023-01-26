@@ -13,17 +13,17 @@ const Seccion = (props)=>{
         <Seccion
         portada={require('../../images/sanji.jpg')}
         titulo='Vinsmoke Sanji'
-        link= '/sanji'
+        link= '/category/sanji'
         />
         <Seccion
         portada={require('../../images/usopp.jpg')}
         titulo='God Usopp'
-        link= '/usopp'
+        link= '/category/usopp'
         /> 
         <Seccion 
         portada={require('../../images/zoro.jpg')}
         titulo='Roronoa Zoro'
-        link= '/zoro'
+        link= '/category/zoro'
         />
     </>)
 }
