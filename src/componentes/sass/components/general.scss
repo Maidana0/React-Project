@@ -36,6 +36,30 @@ button{
     border:none;
     background: none;
 }
+
+// CONTADOR DEL PRODUCTO
+.cont-prod {
+    height: 10%;
+    width: 50%;
+    border-radius: 100px;
+    @include flex-center;
+    justify-content: space-evenly;
+    font-size: 1.3em;
+    margin: 10px auto 2px;
+
+    .btn-cont {
+        color: $secundary-color;
+        border-radius: 100%;
+        font-size: 2em;
+        padding: 5px;
+        transition: all ease .3s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1)
+        }
+    }
+}
+
 .error{
     
     @include flex-center;

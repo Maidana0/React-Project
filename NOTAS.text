@@ -1,17 +1,9 @@
 REVISAR LA VERIFICACION DE FIREBASE PARA EL SISTEMA LOG-IN
-VISTA MINIMA DE ALGUNOS PRODUCTOS EN EL Home
-
-
-● Flow: Al clickear un ítem del listado debe navegar a la ruta /item/:id, donde
-id es el id del item (generado por firebase), y ver la descripción del producto (
-foto, precio, selector de cantidad). Si se ingresa a /item/:id y el producto no
-existe en firebase, debemos responder un mensaje adecuado que indique
-algo relacionado a que el producto no existe.
 
 
 VER CLASE:
 AFTER DE CONTEXT
-FIREBASE 1, AFTER
+FIREBASE 1 AFTER
 FIREBASE 2
 WORKSHOP
 
@@ -43,4 +35,3 @@ if}
 
 
 
-AGREGAR FILTRADO POR NAVEGACION

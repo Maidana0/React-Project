@@ -6,9 +6,8 @@ import { ars } from '../cart/components/CartContext';
 
 export const Item = (props) => {
     const [contador, setContador] = useState(1)
-    const { classe, mostrarDetalles, close, img,
-        nombre, category, precio, id, detalles, stock } = props
-
+    const { classe, mostrarDetalles, close, img, nombre, category,
+         precio, id, detalles, stock } = props
     return (
         <div className={`producto ${classe ? classe : ""}`}>
             {mostrarDetalles ? close : ` `}
@@ -38,11 +37,12 @@ export const Item = (props) => {
                 }
                 <AddToList
                     cantidad={contador}
-                    id
-                    precio
-                    nombre
-                    categoria
-                    detalles
+                    id ={id}
+                    precio={precio}
+                    nombre={nombre}
+                    categoria={category}
+                    detalles={detalles}
+                    imagen={img}
                 />
             </div>
 

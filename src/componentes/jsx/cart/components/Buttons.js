@@ -1,27 +1,37 @@
 import { AiOutlineDelete, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
-const BtnDetails = ({ click }) => {
+const BtnDetails = ({ click,details }) => {
     return (
+        !details 
+        ?
         <AiOutlineEye
             color='black'
             size={'2.5em'}
             onClick={click}
             title={'Mostrar Detalles'}
         />
+        :
+        <AiOutlineEyeInvisible
+        color='black'
+        size={'2.5em'}
+        onClick={click}
+        title={'Cerrar Detalles'}
+    />
     )
 }
 
-export const BtnProductInCart = ({removeProduct,id}) => {
-    const handleClick = () => {
-        console.log("first")
-    }
+export const BtnProductInCart = ({removeProduct,id,setDetails,details}) => {
+
+    const detailsClick = () => setDetails(!details)
 
     const deleteProduct = ()=>  removeProduct(id)
 
     return (
         <>
             <BtnDetails
-                click={handleClick} />
+                click={detailsClick} 
+                details={details}
+                />
 
             <AiOutlineDelete
                 color={'red'}

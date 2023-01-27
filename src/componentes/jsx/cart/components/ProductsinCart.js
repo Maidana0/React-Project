@@ -1,24 +1,30 @@
-import { UseCartContext, ars} from './CartContext';
-import { BtnProductInCart } from './Buttons';
+import CartItem from './CartItem';
 
-const ProductsinCart = () => {
-    const { cart,removeProduct } = UseCartContext()
-    return(
-        cart.map(prod => {
-            return (
-                <div className="cart-item" key={prod.id}>
-                    <h3>{prod.nombre} / {prod.categoria}</h3>
-                    <p>{prod.cantidad}</p>
-                    <p>{ars.format(prod.total)}</p>
-
-                    <BtnProductInCart 
-                    removeProduct={removeProduct}
-                    id = {prod.id}
-                    
+const ProductsinCart = ({ cart, removeProduct, precioTotal, productosTotal }) => {
+    return (
+        <>
+            {
+                cart.map(prod => {
+                    return <CartItem
+                        key={prod.id}
+                        prod={prod}
+                        removeProduct={removeProduct}
                     />
+                })
+            }
+            <div className='results'>
+                <div className="cart-result">
+                    Cantidad de Productos: <strong>{productosTotal}</strong>
                 </div>
-            )
-        })
+
+                <div className="cart-result">
+                    Precio Total: <strong>{precioTotal}</strong>
+                </div>
+            </div>
+
+        </>
+
+
     )
 }
 

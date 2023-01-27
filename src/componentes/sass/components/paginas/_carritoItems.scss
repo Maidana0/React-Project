@@ -1,0 +1,29 @@
+.cart-item {
+    width: 80%;
+    border-color: $primary-color;
+    @include flex-center;
+    @include hover-d;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 15px;
+
+    h3 {
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    svg {
+        padding: 5px;
+        border-radius: 100%;
+        transition: all ease .4s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.150);
+        }
+    }
+
+    @media (max-width: 785px) {
+        width: 100%;
+        padding: 0 5px;
+    }
+}

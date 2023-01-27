@@ -3,8 +3,7 @@ import {UseCartContext} from '../../cart/components/CartContext';
 
 
 export const AddToList =  (props) => {
-    const { cantidad, id, precio, nombre, categoria, detalles } = props
-
+    const { imagen, cantidad, id, precio, nombre, categoria, detalles } = props
     const {cart, addProduct} = UseCartContext()
 
     const addToCart = () => {
@@ -23,7 +22,8 @@ export const AddToList =  (props) => {
                 total: precio * cantidad,
                 id,
                 detalles,
-                categoria
+                categoria,
+                imagen
             }
             addProduct(item)
         }
