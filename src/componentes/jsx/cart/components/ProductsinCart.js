@@ -1,4 +1,4 @@
-import CartItem from './CartItem';
+import CartItem from '../../products/CartItem'
 
 const ProductsinCart = ({ cart, removeProduct, precioTotal, productosTotal }) => {
     return (
@@ -27,8 +27,4 @@ const ProductsinCart = ({ cart, removeProduct, precioTotal, productosTotal }) =>
 
     )
 }
-
-
-
-
 export default ProductsinCart

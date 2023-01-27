@@ -27,7 +27,7 @@ export const BtnProductInCart = ({removeProduct,id,setDetails,details}) => {
     const deleteProduct = ()=>  removeProduct(id)
 
     return (
-        <>
+        <div className='btn-details-delete'>
             <BtnDetails
                 click={detailsClick} 
                 details={details}
@@ -39,7 +39,7 @@ export const BtnProductInCart = ({removeProduct,id,setDetails,details}) => {
                 onClick={deleteProduct}
                 title={'Eliminar Producto'}
             />
-        </>
+        </div>
 
     )
 }
