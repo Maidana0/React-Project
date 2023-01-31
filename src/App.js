@@ -12,6 +12,7 @@ import CategoryList from './componentes/jsx/pages-products/CategoryList';
 import { ToastContain } from './componentes/jsx/products/components/Toast';
 import Footer from './componentes/jsx/nav-foot/Footer'
 import {CartProvider} from './componentes/jsx/cart/components/CartContext';
+import Account from './firebase/log/Account';
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
       <Router>
         <Header />
 
-        <div className="App">
+        <main className="App">
           <Routes>
+          <Route path='/*' element={<Home />} /> 
+
             <Route exact path='/home' element={<Home />} />
 
             <Route exact path='/category/:category' element={<CategoryList />} />
@@ -31,10 +34,12 @@ function App() {
 
             <Route exact path='/cart' element={<ItemList />} />
 
-            <Route path='/*' element={<Home />} /> 
+
+            <Route exact path='/account/:action' element={<Account />}/>
+
 
           </Routes>
-        </div>
+        </main>
 
         <Footer />
         <ToastContain />

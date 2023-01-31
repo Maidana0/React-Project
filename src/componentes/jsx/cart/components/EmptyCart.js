@@ -46,7 +46,7 @@ const EmptyCart = () => {
       load
         ? <img className='gif' src={require('../../../images/load.webp')} />
         :
-        <div className='empty-cart'>
+        <div className={`contain ${!show? 'acc' : ''}`}>
           {
             show
               ? <MostrarCategorias

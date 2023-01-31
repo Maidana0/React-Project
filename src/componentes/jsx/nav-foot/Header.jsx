@@ -1,5 +1,5 @@
 import { Turn as Hamburger } from 'hamburger-react'
-import {  AiFillHome, AiFillInfoCircle, AiFillShop, AiOutlineShoppingCart} from 'react-icons/ai';
+import {  AiFillHome, AiOutlineUser, AiOutlinePoweroff, AiFillInfoCircle, AiFillShop, AiOutlineShoppingCart} from 'react-icons/ai';
 import { NavLink} from 'react-router-dom';
 import {UseCartContext} from '../cart/components/CartContext';
 
@@ -36,12 +36,19 @@ return (
                     <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }   to={'/category/usopp'} >
                         <AiFillShop />Category 3     
                     </NavLink>
+
+
+                    <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }   to={'/account/login'} >
+                        <AiOutlineUser />Log In     
+                    </NavLink>
+
+
                     {/* <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }>
                         <AiFillInfoCircle /> About
                     </NavLink> */}
 
                     <NavLink end className='link-shop' to={'/cart'}>
-                        <AiOutlineShoppingCart/>
+                        <AiOutlineShoppingCart title={'Ir al Carrito'}/>
                         <CartWidget />
                     </NavLink>
                 </li>

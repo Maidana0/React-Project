@@ -4,12 +4,18 @@
 // Componentes
 @import './components/general';
 
+
+
 @import './components/nav-foot/navbar';
 @import './components/nav-foot/footer';
 
 @import './components/paginas/home';
-@import './components/paginas/carrito';
-@import './components/paginas/carritoItems';
+@import './components/paginas/cart/carrito';
+@import './components/paginas/cart/carritoItems';
+
+@import './components/log/login';
+
+
 
 @import './components/paginas/products/product';
 @import './components/paginas/products/details';

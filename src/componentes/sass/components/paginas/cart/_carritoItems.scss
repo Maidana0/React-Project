@@ -70,7 +70,6 @@
 
     .cart-item{
         transition: all ease 0.5s;
-
         .info{
             flex-direction: row;
             justify-content: center;
@@ -114,6 +113,9 @@
 
 
     .details-active {
+        -webkit-animation:scale-in-ver-top .3s cubic-bezier(.25,.46,.45,.94) both;animation:scale-in-ver-top .3s cubic-bezier(.25,.46,.45,.94) both;
+        @-webkit-keyframes scale-in-ver-top{25%{-webkit-transform:scaleY(0);transform:scaleY(0);-webkit-transform-origin:100% 0;transform-origin:100% 0;opacity:1}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:100% 0;transform-origin:100% 0;opacity:1}}@keyframes scale-in-ver-top{0%{-webkit-transform:scaleY(0);transform:scaleY(0);-webkit-transform-origin:100% 0;transform-origin:100% 0;opacity:1}100%{-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transform-origin:100% 0;transform-origin:100% 0;opacity:1}};
+
         border: none;
         padding: 0;
         height: 410px;
@@ -130,7 +132,7 @@
             @include flex-center;
             width: 60%;
             justify-content: space-between;
-            border-bottom: solid 1px black;
+            border-bottom: solid .5px rgba(0, 0, 0, 0.2);
             padding: 2px 35px;
             border-radius: 8px;
             span{

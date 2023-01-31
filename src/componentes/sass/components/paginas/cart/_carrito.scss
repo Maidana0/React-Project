@@ -133,48 +133,7 @@
         }
     }
 
-    .empty-cart {
-        @include flex-center;
-        flex-direction: column;
-        width: 80%;
-        height: auto;
-        background: $bg-dark;
-        padding: 20px;
-        border-radius: 20px;
-        border: solid .5px $primary-color;
-        margin: 15px auto;
-        box-shadow: 0px 0px 12px 5px $bg-dark;
-        -webkit-animation: scale-in-center .5s cubic-bezier(.25, .46, .45, .94) both;
-        animation: scale-in-center .5s cubic-bezier(.25, .46, .45, .94) both;
-
-        @-webkit-keyframes scale-in-center {
-            0% {
-                -webkit-transform: scale(0);
-                transform: scale(0);
-                opacity: 1
-            }
-
-            100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                opacity: 1
-            }
-        }
-
-        @keyframes scale-in-center {
-            0% {
-                -webkit-transform: scale(0);
-                transform: scale(0);
-                opacity: 1
-            }
-
-            100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                opacity: 1
-            }
-        }
-
+    .contain{
         button {
             color: yellow;
             border-radius: 12px;
@@ -205,7 +164,7 @@
 
         @media (max-width: 400px) {
             width: 100%;
-            padding: 0 5px;
+            padding:  5px;
 
         }
 
