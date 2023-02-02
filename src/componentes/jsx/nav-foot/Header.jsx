@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { UseCartContext } from '../cart/components/CartContext';
 
 const Header = () => {
-    const { cart, accountUser } = UseCartContext()
+    const { cart, accountUser, logout } = UseCartContext()
     const CartWidget = () => {
         if (cart.length >= 1) {
             return (<small>{cart.length}</small>)
@@ -42,9 +42,16 @@ const Header = () => {
                                     <AiOutlineUser />Log In
                                 </NavLink>
                                 :
-                                <NavLink end className={({ isActive }) => isActive ? "link focus-item log" : "link log"} to={'/account/login'} >
-                                    <AiOutlinePoweroff />Log Out
-                                </NavLink>
+                                <>
+                                    <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/products/favList'} >
+                                        <AiOutlineUser />Wish List
+                                    </NavLink>
+                                    
+                                    <button className='link' type='button' onClick={logout}>
+                                        <AiOutlinePoweroff />Log Out
+                                    </button>
+                                </>
+
                         }
 
                         {/* <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }>

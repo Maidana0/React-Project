@@ -5,6 +5,7 @@ import { Item } from "../products/item";
 
 
 const List = ({category}) => {
+    
     const [lista, setLista] = useState(false)
     useEffect(() => {
         return async () => {
@@ -19,6 +20,7 @@ const List = ({category}) => {
             lista.map(record => {
                 return (
                     <Item
+                        itemCompleto={record}
                         category={category}
                         key={record.id}
                         id={record.id}
@@ -38,6 +40,9 @@ const List = ({category}) => {
             />
     )
 }
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
 import { useState, useEffect } from 'react'
 
 
@@ -37,13 +37,26 @@ export const AccountLogin = (values, log, setError) => {
       console.log(data)
     })
     .catch((e) => {
-      if (e.code == 'auth/wrong-password') return setError({ error: true, msj: 'Usuario o Contraseña incorrectos.' })
+      // auth/user-not-found ||
+      if (e.code == 'auth/wrong-password' || 'auth/user-not-found') return setError({ error: true, msj: 'Usuario o Contraseña incorrectos.' })
       if (e.code == 'auth/too-many-requests') return setError({ error: true, msj: 'Demasiados intentos, intentelo mas tarde...' })
       console.log(e)
     })
 }
+// SALIR
+export const AccountLogOut = (setAccountUser) => {
+  signOut(auth)
+  .then(()=>{
+    setAccountUser({
+      email: '',
+      logged: false,
+  })
+  })
+  .catch((error)=>console.log(error))
+}
 
 
+//USUARIOS
 const Users = () => {
   const userList = collection(db, 'Usuarios')
   return (

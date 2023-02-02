@@ -12,22 +12,23 @@ const Register = () => {
   const handleSubmitRegister = (e) => {
     e.preventDefault()
     let sex = ''
-    if (e.target[4].checked) sex = e.target[4].value
     if (e.target[5].checked) sex = e.target[5].value
     if (e.target[6].checked) sex = e.target[6].value
+    if (e.target[7].checked) sex = e.target[7].value
 
     const createDataUser = {
       name: e.target[0].value,
       lastName: e.target[1].value,
       tel: e.target[2].value,
-      dateBirth: e.target[3].value,
+      direction: e.target[3].value,
+      dateBirth: e.target[4].value,
       sex,
-      email: e.target[7].value,
-      // password: e.target[8].value
+      email: e.target[8].value,
+      // password: e.target[9].value
     }
     const newUserFirebase = {
-      email: e.target[7].value,
-      password: e.target[8].value
+      email: e.target[8].value,
+      password: e.target[9].value
     }
 
     const repetido = lista.find(usuario => usuario.email == createDataUser.email)

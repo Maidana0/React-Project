@@ -4,12 +4,10 @@ import AddToFav from './AddToFav';
 
 
 export const AddToList = (props) => {
-    const { imagen, cantidad, id, precio, nombre, categoria, detalles } = props
+    const { imagen, cantidad, id, precio, nombre, categoria, detalles,itemCompleto } = props
     const { cart, addProduct } = UseCartContext()
-
     const addToCart = () => {
         const repetido = cart.some(productito => productito.id === id)
-
 
         if (repetido) {
             const este = cart.find(prod => prod.id === id)
@@ -29,7 +27,7 @@ export const AddToList = (props) => {
             addProduct(item)
         }
 
-        Toastify()
+        Toastify('Producto agregado a Favoritos!')
         localStorage.setItem('carrito', JSON.stringify(cart))
     }
 
@@ -37,7 +35,10 @@ export const AddToList = (props) => {
     return (
         <div className='contenedorDeBotones'>
 
-            <AddToFav/>
+            <AddToFav 
+            item={itemCompleto}
+            id={id}
+            />
 
             <button className='agregar-carrito'
                 onClick={addToCart}>

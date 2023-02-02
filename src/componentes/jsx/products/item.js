@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import Contador from './components/Contador.js';
 import AddToList from './components/AddToList';
 import { ars } from '../cart/components/CartContext';
-import { AiOutlineHeart } from 'react-icons/ai';
 
 
 export const Item = (props) => {
     const [contador, setContador] = useState(1)
     const { classe, mostrarDetalles, close, img, nombre, category,
-         precio, id, detalles, stock } = props
+         precio, id, detalles, stock, itemCompleto } = props
     return (
         <div className={`producto ${classe ? classe : ""}`}>
             
@@ -39,6 +38,9 @@ export const Item = (props) => {
                     : ` `
                 }
                 <AddToList
+                    
+                    itemCompleto={itemCompleto}
+
                     cantidad={contador}
                     id ={id}
                     precio={precio}

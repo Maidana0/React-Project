@@ -1,33 +1,59 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import { AccountLogOut } from "../../../../firebase/config";
+
+import Swal from "sweetalert2";
 
 export const CartContext = createContext()
 
+
 export const CartProvider = ({ children }) => {
+    // LIST FAV
+    const favStorage = JSON.parse(localStorage.getItem('favList')) || []
+    const [fav, setFav] = useState(favStorage)
+    const addToFav = item => setFav([...fav, item])
+    const deleteToFav = id => setFav(fav.filter(prod => prod.id !== id))
+
+
+
     // USER LOG
 
     const account = JSON.parse(localStorage.getItem('account')) ||
     {
         email: '',
-        logged: false
+        logged: false,
     }
 
 
     const [accountUser, setAccountUser] = useState(account)
-    useEffect(() => localStorage.setItem('account', JSON.stringify(accountUser)), [accountUser])
 
     const login = (data) => {
         setAccountUser(
             {
                 email: data,
-                logged: true
+                logged: true,
             }
         )
     }
 
     const logout = () => {
-        setAccountUser({
-            email: '',
-            logged: false
+        Swal.fire({
+            title: '¿Seguro que quieres cerrar tu sesión?',
+            text: 'Para finalizar tu compra que iniciar sesión nuevamente.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'No, cancelar!',
+            confirmButtonText: 'Si, quiero cerrarla!!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                AccountLogOut(setAccountUser)
+                Swal.fire(
+                    'Listo!',
+                    'Se ha desconectado con exito!',
+                    'success'
+                )
+            }
         })
     }
 
@@ -43,16 +69,64 @@ export const CartProvider = ({ children }) => {
     const removeProduct = (id) => {
         setCart(cart.filter(prod => prod.id !== id))
     }
-
-    const removeCart = ({ }) => {
-        setCart([]);
-        localStorage.removeItem('carrito')
+    const finishCart = (ordenId) => {
+        Swal.fire({
+            title: 'Desea terminar su compra?',
+            text: 'Se creara una orden con los datos de su compra.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'No, aun no!',
+            confirmButtonText: 'Si, quiero hacerlo!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                setCart([]);
+                localStorage.removeItem('carrito');
+                Swal.fire(
+                    'Su compra ha sido exitosa!',
+                    `Su numero de orden es: ${ordenId}`,
+                    'success'
+                )
+            }
+        })
     }
 
+    const removeCart = () => {
+        Swal.fire({
+            title: 'Desea continuar?',
+            text: 'Borrara todos los productos dentro del carrito',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'No, cancelar!',
+            confirmButtonText: 'Si, quiero vaciarlo!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                setCart([]);
+                localStorage.removeItem('carrito');
+                Swal.fire(
+                    'Listo!',
+                    'Carrito vacio.',
+                    'success'
+                )
+            }
+        })
+
+
+    }
+
+    useEffect(() => localStorage.setItem('account', JSON.stringify(accountUser)), [accountUser])
+    useEffect(() => localStorage.setItem('favList', JSON.stringify(fav)), [fav])
     useEffect(() => localStorage.setItem('carrito', JSON.stringify(cart)), [cart])
 
     return (
         <CartContext.Provider value={{
+            fav,
+            addToFav,
+            deleteToFav,
+
             accountUser,
             login,
             logout,
@@ -60,7 +134,9 @@ export const CartProvider = ({ children }) => {
             cart,
             addProduct,
             removeCart,
-            removeProduct
+            removeProduct,
+            finishCart
+
         }}
         >
             {children}

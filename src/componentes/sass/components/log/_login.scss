@@ -59,7 +59,12 @@
         font-weight: 500
         
     }
+    @media (max-width: 400px) {
+        width: 95%;
+    }
 }
+
+
 
 #login, #register{
     @include flex-center;
@@ -69,7 +74,11 @@
     gap: 20px;
     width: 70%;
     margin: 1.5rem auto;
+        
 
+    @media (max-width: 400px) {
+        width: 100%;
+    }
 }
 #login{
     .email{
@@ -131,15 +140,17 @@
         
         #date{
             width: 50%;
-
+            @media (max-width: 400px) {
+                width: 80%;
+            }
         }
 
         .sex{
             @include flex-center;
             justify-content: space-around;
             width: 70%;
-            margin-top: 10px;
             gap: 15px;
+
             label{
                 @include flex-center;
                 flex-direction: row;
@@ -152,8 +163,15 @@
                 font-size: small;
                 font-weight: 500;
             }
+            @media (max-width: 400px) {
+                width: 100%;   
+             }
         }
 
+        @media (max-width: 400px) {
+            flex-direction: column;
+            gap: 15px;
+         }
     }
     .password{
         width: 100%;

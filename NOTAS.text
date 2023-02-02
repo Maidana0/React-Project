@@ -1,36 +1,7 @@
-REVISAR LA VERIFICACION DE FIREBASE PARA EL SISTEMA LOG-IN
-
-
 VER CLASE:
-AFTER DE CONTEXT
 FIREBASE 2
 WORKSHOP
 
-
-
-nombreusuario= input text
-
-
-LOG IN
-if(!usuario){ etc}
-Swal.fire({
-    title: 'Bienvenido',
-    text: 'Ingresa tu Usuario',
-    input: 'text',
-    inputValidator:(value)=>{
-        if(!value){
-            return 'Necesitas ingresar usuario'
-        }
-
-    }
-
-})
-    .then(userName=>{
-        usuario = userName
-        nombreUsuario.innetText = usuario
-    })
-
-if}
 
 
 

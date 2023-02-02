@@ -9,10 +9,12 @@ import { ItemDetails } from './componentes/jsx/products-details/ProdDetails';
 import CategoryList from './componentes/jsx/pages-products/CategoryList';
 
 
-import { ToastContain } from './componentes/jsx/products/components/Toast';
+import { ToastContain, FavToastContainer } from './componentes/jsx/products/components/Toast';
 import Footer from './componentes/jsx/nav-foot/Footer'
 import {CartProvider} from './componentes/jsx/cart/components/CartContext';
 import Account from './firebase/log/Account';
+import FavList from './componentes/jsx/FavList/FavList';
+
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route exact path='/home' element={<Home />} />
 
             <Route exact path='/category/:category' element={<CategoryList />} />
+            
+            <Route exact path='/products/favList' element={<FavList />} />
 
 
             <Route exact path='/:category/product/:id' element={<ItemDetails />} />
@@ -43,6 +47,7 @@ function App() {
 
         <Footer />
         <ToastContain />
+        <FavToastContainer />
       </Router>
     </CartProvider>
 

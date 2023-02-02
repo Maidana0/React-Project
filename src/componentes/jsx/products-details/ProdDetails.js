@@ -29,6 +29,8 @@ export const ItemDetails = ()=>{
             </div>
             :
             <Item 
+            itemCompleto={producto}
+
             category={category}
             id={producto.id} 
             img={producto.imagen}

@@ -54,11 +54,12 @@ const AlreadyRegistered = () =>
     </Link>
 const InfoUser = () =>
     <>
-        <input type="text" name="name" placeholder="Ingrese su nombre" required />
-        <input type="text" name="lastName" placeholder="Ingrese su apellido" required />
-        <input autoComplete='user-tel' type="tel" name="tel" placeholder="Ingrese su numero celular con codigo de area" required />
-    </>
+        <input minLength={3} type="text" name="name" placeholder="Ingrese su nombre" required />
+        <input minLength={3} type="text" name="lastName" placeholder="Ingrese su apellido" required />
+        <input minLength={10} autoComplete='user-tel' type="tel" name="tel" placeholder="Ingrese su numero de celular" required />
+        <input minLength={5} type="text" name="direction" placeholder="Ingrese la direccion de su domicilio" required />
 
+    </>
 
 
 export const addNewUser = (on, objUser) => {
