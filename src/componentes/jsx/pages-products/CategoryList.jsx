@@ -28,7 +28,7 @@ const CategoryList = () => {
         title() ?
             <Lista />
             :
-            <div className="contain">
+            <div className="contain acc">
                 <h2> La categoria que buscas no se encuentra en nuestro sitio!</h2>
                 <img src={require('../../images/error.png')} />
             </div>

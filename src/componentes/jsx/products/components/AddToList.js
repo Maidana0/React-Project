@@ -1,10 +1,11 @@
-import {Toastify } from './Toast'
-import {UseCartContext} from '../../cart/components/CartContext';
+import { Toastify } from './Toast'
+import { UseCartContext } from '../../cart/components/CartContext';
+import AddToFav from './AddToFav';
 
 
-export const AddToList =  (props) => {
+export const AddToList = (props) => {
     const { imagen, cantidad, id, precio, nombre, categoria, detalles } = props
-    const {cart, addProduct} = UseCartContext()
+    const { cart, addProduct } = UseCartContext()
 
     const addToCart = () => {
         const repetido = cart.some(productito => productito.id === id)
@@ -29,16 +30,20 @@ export const AddToList =  (props) => {
         }
 
         Toastify()
-        localStorage.setItem ('carrito', JSON.stringify (cart) )
+        localStorage.setItem('carrito', JSON.stringify(cart))
     }
 
-
+  
     return (
-        <button className='agregar-carrito'
-            onClick={addToCart}>
-            AGREGAR AL CARRITO
-        </button>
+        <div className='contenedorDeBotones'>
 
+            <AddToFav/>
+
+            <button className='agregar-carrito'
+                onClick={addToCart}>
+                AGREGAR AL CARRITO
+            </button>
+        </div>
     )
 }
 export default AddToList

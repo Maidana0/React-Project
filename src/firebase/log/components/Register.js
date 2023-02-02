@@ -1,38 +1,74 @@
-import { Password } from "./Password"
-import { useState } from "react"
-import { Checkbox, Date, AlreadyRegistered } from "./componentsRegister"
-
-
+import { addNewUser, FormularioRegister } from "./componentsRegister"
+import { DataUserList } from "../../config";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Register = () => {
-  const [user, setUser] = useState({userName:null,userPassword:null})
-  
+
+  const [registered, setRegistered] = useState(false)
+  const [alreadyExist, setAlreadyExist] = useState(false)
+
+  const lista = DataUserList()
+  const handleSubmitRegister = (e) => {
+    e.preventDefault()
+    let sex = ''
+    if (e.target[4].checked) sex = e.target[4].value
+    if (e.target[5].checked) sex = e.target[5].value
+    if (e.target[6].checked) sex = e.target[6].value
+
+    const createDataUser = {
+      name: e.target[0].value,
+      lastName: e.target[1].value,
+      tel: e.target[2].value,
+      dateBirth: e.target[3].value,
+      sex,
+      email: e.target[7].value,
+      // password: e.target[8].value
+    }
+    const newUserFirebase = {
+      email: e.target[7].value,
+      password: e.target[8].value
+    }
+
+    const repetido = lista.find(usuario => usuario.email == createDataUser.email)
+    if (!repetido) {
+      addNewUser(true, { data: createDataUser, user: newUserFirebase })
+      setRegistered(true)
+    }
+
+    else {
+      console.log('YA ESTA REGISTRADO')
+      setAlreadyExist(true)
+    }
+
+  }
+
   return (
-    <>
-      <div className='contain acc'>
-        <h2
-          style={{ padding: "1px 25px", borderRadius: "8px", borderBottom: "solid 5px yellow" }}               >Registrar nuevo usuario</h2>
+    <div className='contain acc'>
 
-        <form id="register">
-          <h3>Datos Personales</h3>
+      <h2 style={{ borderRadius: "8px", borderBottom: "solid 5px yellow" }}>
+        {registered ? 'Usuario Creado con Exito!' :  'Registrar nuevo usuario'}
 
-          <input type="text" name="name" placeholder="Ingrese su nombre" required />
-          <input type="text" name="lastName" placeholder="Ingrese su apellido" required />
+      </h2>
 
-          <Date/>
-          <Checkbox />
-          <h3>Datos de Ingreso</h3>
+      {
+        registered ? <>
 
-          <input autoComplete='user-name' type="email" name="email" placeholder="Ingrese su correo electronico" required />
-          <Password id="new" />
+          <img className="sucess" src={require('../../../componentes/images/sucess.png')} />
+
+          <NavLink className='sucess-a' to='/account/login'> Iniciar Sesion </NavLink>
+        </>
+          :
+          <FormularioRegister
+            span={alreadyExist}
+            submitEvent={handleSubmitRegister} />
+
+      }
 
 
-          <button type='submit'>Registrarse</button>
 
-        </form>
-        <AlreadyRegistered />
-      </div>
-    </>
+
+    </div>
   )
 }
 

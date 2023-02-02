@@ -18,7 +18,6 @@ const Account = () => {
       </div>
     )
   }
-  console.log(action)
 
 
   // action puede ser = login - register - logout

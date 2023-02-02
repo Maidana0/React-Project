@@ -1,10 +1,25 @@
 .acc{
     text-align: center;
+    
+    .sucess{
+        width: 170px;
+        margin: 2rem auto;
+        background-color: white;
+        border-radius: 100%;
+        box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.6);
+        @include hover-d
+
+    }
+
     h2{
+        padding: 1px 25px;
         color: white;
         font-size: 2rem;
         text-align: center;
         margin: 1rem 0 0;
+        @media (max-width: 400px) {
+           padding: 1px 5px;
+        }
 
     }
     img{
@@ -23,7 +38,9 @@
             transform: scale(1.05)
         }
     }
-    button{
+      .sucess-a,  button{
+        text-decoration: none;
+
         font-weight: 600;
         font-size: 1rem;
         color:  $text-w;
@@ -33,6 +50,14 @@
         border-radius: 18px;
         box-shadow: 0 0 4px 1px $primary-color;
         @include hover-d
+    }
+    .span{
+        background-color: rgb(0, 0, 0);
+        padding: .7rem 1.2rem;
+        border: solid 1px red;
+        border-radius: 50px;
+        font-weight: 500
+        
     }
 }
 
@@ -47,7 +72,7 @@
 
 }
 #login{
-    .user{
+    .email{
         padding: .7rem 1rem;
         width: 80%;
     }

@@ -46,9 +46,6 @@ export const BtnProductInCart = ({removeProduct,id,setDetails,details}) => {
 
 
 
-
-
-
 export const ButtonsCart = ({ remove, finish }) => {
     return (
         <div className='btn'>

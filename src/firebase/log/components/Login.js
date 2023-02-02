@@ -1,38 +1,49 @@
-import { Password } from './Password';
-import { Link } from "react-router-dom"
+import { useState, useEffect } from 'react';
+import { AccountLogin } from '../../config';
+import { UseCartContext } from '../../../componentes/jsx/cart/components/CartContext';
+import { Logueado, Header, FormLogin } from './componentsLogin';
+
 
 const Login = () => {
+  const { login, accountUser } = UseCartContext()
+  const [logged, setLogged] = useState(false)
+  useEffect(() => {
+    if (accountUser.logged) return setLogged(true)
+  }, [accountUser])
+
+
+  const [user, setUser] = useState({ email: '', currentPassword: '' })
+  const [error, setError] = useState({ error: false })
+
+  const handleInputChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    AccountLogin(user, login, setError)
+  }
+
+
   return (
     <div className='contain acc'>
-
-      <h2
-        style={{ padding: "1px 25px", borderRadius: "8px", borderBottom: "solid 5px yellow" }}>
-        Iniciar Sesión</h2>
-        <img src={require('../../../componentes/images/sanji-a.jpg')}
-        style={{marginTop:'1rem', width:"149px", borderRadius:'100%'}}/>
-      
-      <form id='login'>
-        <input className='user' autoComplete='user-name' name='user' placeholder='Correo electronico*' type='email' required/>
-
-        <Password id={'current'}/>
-
-       
-          <label className='persistentLogin'>Mantener la sesión abierta
-          <input type='checkbox' name='persistentLogin' />
-          </label>
-          
-        
-
-        <a>¿Has olvidado tu contraseña?</a>
-                {/* // BOTON DE INGRESAR CON FACE Y GOOGLE */}
-
-        <button type='submit'>Ingresar</button>
-      </form>
-      <Link to={'/account/register'}>
-      ¿No estas registrado?
-    </Link> 
+      <Header logg={logged} />
+      {
+        !logged ?
+          <FormLogin
+            handleSubmit={handleSubmit}
+            user={user}
+            handleInputChange={handleInputChange}
+            error={error}
+          />
+          :
+          <Logueado />
+      }
     </div>
-      )
+  )
 }
 
 export default Login

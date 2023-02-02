@@ -3,7 +3,36 @@ import { createContext, useState, useEffect, useContext } from "react";
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
+    // USER LOG
 
+    const account = JSON.parse(localStorage.getItem('account')) ||
+    {
+        email: '',
+        logged: false
+    }
+
+
+    const [accountUser, setAccountUser] = useState(account)
+    useEffect(() => localStorage.setItem('account', JSON.stringify(accountUser)), [accountUser])
+
+    const login = (data) => {
+        setAccountUser(
+            {
+                email: data,
+                logged: true
+            }
+        )
+    }
+
+    const logout = () => {
+        setAccountUser({
+            email: '',
+            logged: false
+        })
+    }
+
+
+    // CARRITO
     const cartStorage = JSON.parse(localStorage.getItem('carrito')) || []
     const [cart, setCart] = useState(cartStorage)
 
@@ -20,10 +49,14 @@ export const CartProvider = ({ children }) => {
         localStorage.removeItem('carrito')
     }
 
-    useEffect(() => localStorage.setItem ('carrito', JSON.stringify (cart) ), [cart])
-    
+    useEffect(() => localStorage.setItem('carrito', JSON.stringify(cart)), [cart])
+
     return (
         <CartContext.Provider value={{
+            accountUser,
+            login,
+            logout,
+
             cart,
             addProduct,
             removeCart,
@@ -35,7 +68,7 @@ export const CartProvider = ({ children }) => {
     )
 }
 
-export const UseCartContext =()=> useContext(CartContext)
+export const UseCartContext = () => useContext(CartContext)
 
 
 

@@ -137,22 +137,77 @@
                         margin: 0 auto
     
                     }
-                    .agregar-carrito{
-                        background-color:$primary-color;
+                    .contenedorDeBotones{
+                        width: 35%;
+                        height: 100%;
+                        transition: all ease .5s;       
+
                         border: solid 1.5px  $secundary-color;
                         box-shadow: 0 0 6px 2px $primary-color;
                         border-radius: 100px;
-                        padding: 30px 20px;
-                        color: $secundary-color;
-                        height: 100%;
-                        width: 30%;
                         margin: 0 auto;        
-                        transition: all ease .5s;       
-                        &:hover{
-                            color:$primary-color;
-                            background-color: black;
+                        background-color:$primary-color;
+                        .addToFav{
+                            width: 25%;
+                            color: $secundary-color;
+                            border-radius:  90px 0 0 90px;
+
+                            &:hover{
+                                color:$primary-color;
+                                background-color: black;
+                            }
+                            svg{
+                                width: 50%;
+                            }
                         }
-                    }            
+                        .agregar-carrito{
+                            width: 75%;
+                            padding: 10px;
+                            border-radius:  0 90px 90px 0 ;
+                            color: $secundary-color;
+                            &:hover{
+                                color:$primary-color;
+                                background-color: black;
+                            }
+                        } 
+                    }
+           
             }
 
 }    
+
+
+// .contenedorDeBotones{
+//     width: 100%;
+//     height: 65%;
+//     display: flex;
+//     justify-content: space-evenly;
+//     border-radius: 0 0 18px 18px;
+//     border: solid .5px  $secundary-color;
+//     background-color:$secundary-color;
+// .addToFav{
+//     cursor: pointer;
+//     @include flex-center;
+//     justify-content: center;
+//     width: 15%;
+//     height: 100%;
+//     border-radius: 0 0 0 18px;
+//     svg{
+//         width: 70%;
+//         height: 100%;
+//     }
+// }
+
+//     .agregar-carrito{
+//         cursor: pointer;
+//         height: 100%;
+//         width: 80%;
+//         border-radius: 0 0 18px 0;
+//         @include flex-center;  
+//         justify-content: center;
+//         color: $primary-color;
+//         font-family: $openSans-sansSerif;
+//         font-weight: 700;
+//         font-size: 1rem;
+//     }
+// }

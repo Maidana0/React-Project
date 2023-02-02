@@ -23,7 +23,7 @@ export const ItemDetails = ()=>{
         producto ?
        
             producto.error? 
-            <div className="contain">
+            <div className="contain acc">
                 <h2>{producto.error}</h2> 
                 <img src={require('../../images/error.png')}/>
             </div>

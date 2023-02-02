@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Contador from './components/Contador.js';
 import AddToList from './components/AddToList';
 import { ars } from '../cart/components/CartContext';
+import { AiOutlineHeart } from 'react-icons/ai';
+
 
 export const Item = (props) => {
     const [contador, setContador] = useState(1)
@@ -10,8 +12,9 @@ export const Item = (props) => {
          precio, id, detalles, stock } = props
     return (
         <div className={`producto ${classe ? classe : ""}`}>
-            {mostrarDetalles ? close : ` `}
+            
 
+            {mostrarDetalles ? close : ` `}
             <div className="prod-img">
                 <img src={require(`${img}`)} alt={"imagen del " + nombre} />
             </div>
