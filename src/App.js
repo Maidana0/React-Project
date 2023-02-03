@@ -15,6 +15,8 @@ import {CartProvider} from './componentes/jsx/cart/components/CartContext';
 import Account from './firebase/log/Account';
 import FavList from './componentes/jsx/FavList/FavList';
 
+import SeguirOrden from './componentes/jsx/SeguirOrden';
+
 
 function App() {
   return (
@@ -41,7 +43,8 @@ function App() {
 
             <Route exact path='/account/:action' element={<Account />}/>
 
-
+            <Route exact path='/order' element={<SeguirOrden />}/>
+            
           </Routes>
         </main>
 

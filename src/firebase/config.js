@@ -84,7 +84,23 @@ export const DataUserList = () => {
   return lista
 }
 
+// ORDENES 
+export const Ordenes = () => {
+  const orders = collection(db,'Ordenes')
+  return (
+    getDocs(orders)
+      .then((resp) => {
+        const listita = resp.docs.map((doc) => {
+          return {
+            id: doc.id,
+            ...doc.data()
+          }
+        })
+        return listita
+      })
+  )
 
+}
 // PRODUCTOS EN FIREBASE
 
 export const ListProducts = (category) => {

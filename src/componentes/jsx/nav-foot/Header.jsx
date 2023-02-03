@@ -50,6 +50,10 @@ const Header = () => {
                                     <button className='link' type='button' onClick={logout}>
                                         <AiOutlinePoweroff />Log Out
                                     </button>
+
+                                    <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/order'} >
+                                        <AiOutlineUser />Ver mi Orden
+                                    </NavLink>
                                 </>
 
                         }
@@ -62,6 +66,7 @@ const Header = () => {
                             <AiOutlineShoppingCart title={'Ir al Carrito'} />
                             <CartWidget />
                         </NavLink>
+                        
                     </li>
 
                 </ul>
