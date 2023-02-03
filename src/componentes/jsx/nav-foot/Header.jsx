@@ -51,9 +51,9 @@ const Header = () => {
                                         <AiOutlinePoweroff />Log Out
                                     </button>
 
-                                    <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/order'} >
+                                    {/*FAIL <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/order'} >
                                         <AiOutlineUser />Ver mi Orden
-                                    </NavLink>
+                                    </NavLink> */}
                                 </>
 
                         }
