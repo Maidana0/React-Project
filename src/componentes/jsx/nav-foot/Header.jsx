@@ -46,10 +46,6 @@ const Header = () => {
                                     <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/products/favList'} >
                                         <AiOutlineUser />Wish List
                                     </NavLink>
-                                    <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/order'} >
-                                        <AiOutlineUser />Mi Orden
-                                    </NavLink>
-
                                     <button className='link' type='button' onClick={logout}>
                                         <AiOutlinePoweroff />Log Out
                                     </button>

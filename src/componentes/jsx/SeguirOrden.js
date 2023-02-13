@@ -1,5 +1,6 @@
 import { Ordenes } from "../../firebase/config"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 const SeguirOrden = () => {
     const [listaOrdenes, setListaOrdenes] = useState(false)
 
@@ -107,6 +108,11 @@ const SeguirOrden = () => {
 
                     : <span style={{textAlign:'center'}}>Encuentra tu orden...</span>
             }
+
+            <Link to={'/cart'}
+             style={{ textDecoration: 'underline', margin: '1rem auto',
+             fontWeight:600, color:'white', backgroundColor:'black',
+         padding:'10px 15px', border:'solid 1px white', borderRadius:12, boxShadow:'0 0 12px 2px black' }}>Volver</Link>
         </>
     )
 }
