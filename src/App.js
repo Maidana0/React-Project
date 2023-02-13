@@ -45,7 +45,7 @@ function App() {
 
             <Route exact path='/account/:action' element={<Account />}/>
 
-            {/*EN PROCESO fail <Route exact path='/order' element={<SeguirOrden />}/> */}
+            <Route exact path='/order' element={<SeguirOrden />}/>
             
           </Routes>
         </main>

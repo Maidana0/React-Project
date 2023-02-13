@@ -3,6 +3,12 @@ import { db } from "../../../../firebase/config"
 import { collection, addDoc } from "firebase/firestore"
 import Swal from "sweetalert2"
 
+const orderGenerator = (max, min)=>{
+    return (
+        Math.floor(Math.random() * (max - min) + min)
+    )
+}
+
 
 const check = (productos) => productos.map(data => {
     return ` ${data.nombre} de la categoria ${data.categoria} - `
@@ -15,7 +21,7 @@ export const handleClickFinish = async (user, products, total, lista, finishCart
 
         if (dataUser) {
             const orden = {
-                id: `${user.email}-${total}`,
+                id: `${dataUser.lastName}-order-${orderGenerator(1000,10)}-${orderGenerator(100000,1000)}-${orderGenerator(10,1)}`,
                 client: {
                     fullName: `${dataUser.name} ${dataUser.lastName}`,
                     tel: dataUser.tel,
@@ -40,7 +46,8 @@ export const handleClickFinish = async (user, products, total, lista, finishCart
                     const orderRef = collection(db, 'Ordenes')
                     addDoc(orderRef, orden)
                         .then((doc) => {
-                            finishCart(doc.id)
+                            finishCart(orden.id)
+                            console.log(orden)
                         })
                 }
             })

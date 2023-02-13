@@ -71,25 +71,34 @@ export const CartProvider = ({ children }) => {
     }
     const finishCart = (ordenId) => {
         Swal.fire({
-            title: 'Desea terminar su compra?',
-            text: 'Se creara una orden con los datos de su compra.',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            cancelButtonText: 'No, aun no!',
-            confirmButtonText: 'Si, quiero hacerlo!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                setCart([]);
-                localStorage.removeItem('carrito');
-                Swal.fire(
-                    'Su compra ha sido exitosa!',
-                    `Su numero de orden es: ${ordenId}`,
-                    'success'
-                )
-            }
+            position: 'center',
+            icon: 'success',
+            title: 'Tu orden ha sido creada de forma exitosa!',
+            text: `Su numero de orden es: ${ordenId}`,
+            showConfirmButton: true
         })
+        setCart([]);
+        localStorage.removeItem('carrito');
+        // Swal.fire({
+        //     title: 'Desea terminar su compra?',
+        //     text: 'Se creara una orden con los datos de su compra.',
+        //     icon: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     cancelButtonText: 'No, aun no!',
+        //     confirmButtonText: 'Si, quiero hacerlo!'
+        // }).then((result) => {
+        //     if (result.isConfirmed) {
+        //         setCart([]);
+        //         localStorage.removeItem('carrito');
+        //         Swal.fire(
+        //             'Su compra ha sido exitosa!',
+        //             `Su numero de orden es: ${ordenId}`,
+        //             'success'
+        //         )
+        //     }
+        // })
     }
 
     const removeCart = () => {

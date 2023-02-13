@@ -92,7 +92,7 @@ export const Ordenes = () => {
       .then((resp) => {
         const listita = resp.docs.map((doc) => {
           return {
-            id: doc.id,
+            // id: doc.id,
             ...doc.data()
           }
         })

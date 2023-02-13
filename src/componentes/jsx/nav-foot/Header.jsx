@@ -46,14 +46,13 @@ const Header = () => {
                                     <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/products/favList'} >
                                         <AiOutlineUser />Wish List
                                     </NavLink>
-                                    
+                                    <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/order'} >
+                                        <AiOutlineUser />Mi Orden
+                                    </NavLink>
+
                                     <button className='link' type='button' onClick={logout}>
                                         <AiOutlinePoweroff />Log Out
                                     </button>
-
-                                    {/*FAIL <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/order'} >
-                                        <AiOutlineUser />Ver mi Orden
-                                    </NavLink> */}
                                 </>
 
                         }
@@ -66,7 +65,7 @@ const Header = () => {
                             <AiOutlineShoppingCart title={'Ir al Carrito'} />
                             <CartWidget />
                         </NavLink>
-                        
+
                     </li>
 
                 </ul>
