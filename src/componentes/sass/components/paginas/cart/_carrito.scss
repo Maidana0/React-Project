@@ -148,7 +148,7 @@
 
         h3 {
             text-align: center;
-            margin: 15px;
+            margin: 15px auto 0;
             color: white;
             font-size: 1.5em;
 
@@ -171,7 +171,7 @@
         .container-title {
             background: none;
             margin: 8px auto;
-
+            text-align: center;
             .img-title {
                 max-height: 480px;
                 pointer-events: none;

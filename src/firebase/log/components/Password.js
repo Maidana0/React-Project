@@ -14,9 +14,9 @@ export const Password = ({ id, values, inputChange }) => {
         autoComplete={`${id}-password`} id={`${id}-password`} name={`${id}Password`}
         placeholder='Contraseña*' type={typePassword ? 'text' : 'password'} required />
       {typePassword ?
-        <AiFillEye title={"No Mostrar"} onClick={handleClick} fontSize={'1.5em'} color={"yellow"} />
+        <AiFillEye title={"No Mostrar"} onClick={handleClick} fontSize={'1.5em'}  />
         :
-        <AiFillEyeInvisible title={"Mostrar"} onClick={handleClick} fontSize={'1.5em'} color={"yellow"} />}
+        <AiFillEyeInvisible title={"Mostrar"} onClick={handleClick} fontSize={'1.5em'} />}
 
     </section>
   )

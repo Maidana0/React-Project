@@ -30,10 +30,10 @@ const Header = () => {
                         <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/sanji'}>
                             <AiFillShop /> Category 1
                         </NavLink>
-                        <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/zoro'} >
+                        <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/usopp'} >
                             <AiFillShop />Category 2
                         </NavLink>
-                        <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/usopp'} >
+                        <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/zoro'} >
                             <AiFillShop />Category 3
                         </NavLink>
                         {

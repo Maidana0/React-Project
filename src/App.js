@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import Header from './componentes/jsx/nav-foot/Header'
 
 import Home from './componentes/jsx/home/Home'
@@ -26,7 +28,7 @@ function App() {
 
         <main className="App">
           <Routes>
-          <Route path='/*' element={<Home />} /> 
+          <Route path='/' element={<Home />} /> 
 
             <Route exact path='/home' element={<Home />} />
 
