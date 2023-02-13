@@ -14,10 +14,9 @@ const check = (productos) => productos.map(data => {
     return ` ${data.nombre} de la categoria ${data.categoria} - `
 })
 
-export const handleClickFinish = async (user, products, total, lista, finishCart) => {
-    try {
+export const handleClickFinish = (user, products, total, lista, finishCart) => {
 
-        const dataUser = await lista ? lista.find(data => data.email = user.email) : false
+        const dataUser = lista ? lista.find(data => data.email = user.email) : false
 
         if (dataUser) {
             const orden = {
@@ -60,11 +59,6 @@ export const handleClickFinish = async (user, products, total, lista, finishCart
             text: 'Espere un momento e intentelo de nuevo.',
             footer: 'Cargando datos...'
         })
-
-    } catch (error) {
-        console.log(error)
-    }
-
 
 }
 

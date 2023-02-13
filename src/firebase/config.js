@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
-import { useState, useEffect } from 'react'
 
 
 // Your web app's Firebase configuration
@@ -46,18 +45,18 @@ export const AccountLogin = (values, log, setError) => {
 // SALIR
 export const AccountLogOut = (setAccountUser) => {
   signOut(auth)
-  .then(()=>{
-    setAccountUser({
-      email: '',
-      logged: false,
-  })
-  })
-  .catch((error)=>console.log(error))
+    .then(() => {
+      setAccountUser({
+        email: '',
+        logged: false,
+      })
+    })
+    .catch((error) => console.log(error))
 }
 
 
 //USUARIOS
-const Users = () => {
+export const Users = () => {
   const userList = collection(db, 'Usuarios')
   return (
     getDocs(userList)
@@ -73,20 +72,22 @@ const Users = () => {
 
 
 // LISTA DE DATA DE USUARIOS
-export const DataUserList = () => {
-  const [lista, setLista] = useState(false)
-  useEffect(() => {
-    return async () => {
-      const lista = await Users()
-      setLista(lista)
-    }
-  }, [])
-  return lista
-}
+// export const DataUserList = () => {
+//   const [lista, setLista] = useState(false)
+//   Users()
+//   .then(data=> setLista(data))
+//   // useEffect(() => {
+//   //   return async () => {
+//   //     const lista = await Users()
+//   //     setLista(lista)
+//   //   }
+//   // }, [])
+//   return lista
+// }
 
 // ORDENES 
 export const Ordenes = () => {
-  const orders = collection(db,'Ordenes')
+  const orders = collection(db, 'Ordenes')
   return (
     getDocs(orders)
       .then((resp) => {

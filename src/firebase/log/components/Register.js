@@ -1,5 +1,5 @@
 import { addNewUser, FormularioRegister } from "./componentsRegister"
-import { DataUserList } from "../../config";
+import { Users } from "../../config";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -7,8 +7,9 @@ const Register = () => {
 
   const [registered, setRegistered] = useState(false)
   const [alreadyExist, setAlreadyExist] = useState(false)
-
-  const lista = DataUserList()
+  const [lista, setLista] = useState(false)
+  Users()
+    .then(data => setLista(data))
   const handleSubmitRegister = (e) => {
     e.preventDefault()
     let sex = ''
@@ -48,7 +49,7 @@ const Register = () => {
     <div className='contain acc'>
 
       <h2 style={{ borderRadius: "8px", borderBottom: "solid 5px yellow" }}>
-        {registered ? 'Usuario Creado con Exito!' :  'Registrar nuevo usuario'}
+        {registered ? 'Usuario Creado con Exito!' : 'Registrar nuevo usuario'}
 
       </h2>
 

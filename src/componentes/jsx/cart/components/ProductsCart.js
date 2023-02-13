@@ -3,7 +3,8 @@ import { ars, UseCartContext } from './CartContext.js';
 import {handleClickFinish} from './Finish';
 import ProductsinCart from './ProductsinCart';
 
-import { DataUserList } from "../../../../firebase/config"
+import { Users } from "../../../../firebase/config"
+import { useState } from 'react';
 
     
 
@@ -11,11 +12,13 @@ import { DataUserList } from "../../../../firebase/config"
 const ProductsCart = () => {
     const { cart, removeCart, removeProduct, accountUser, finishCart } = UseCartContext()
 
+    const [lista, setLista] = useState(false)
     const priceTotal = cart.reduce((acc, item) => acc += item.total, 0)
     const quantityTotal = cart.reduce((acc, item) => acc += item.cantidad, 0)
 
-    const lista = DataUserList()
-    
+    Users().then(data => setLista(data))
+
+
     const finish = ()=>{
         handleClickFinish(accountUser,cart,priceTotal, lista, finishCart)
 
