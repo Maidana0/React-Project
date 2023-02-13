@@ -4,7 +4,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './componentes/jsx/nav-foot/Header'
 
 import Home from './componentes/jsx/home/Home'
-import { ItemList } from './componentes/jsx/cart/ItemList';
+import { ItemList } from './componentes/jsx/cart/itemList';
 
 import { ItemDetails } from './componentes/jsx/products-details/ProdDetails';
 
