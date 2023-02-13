@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-Project/static/css/main.07dbd260.css",
-    "main.js": "/React-Project/static/js/main.6f94e818.js",
+    "main.js": "/React-Project/static/js/main.42b4186c.js",
     "static/media/sanji.gif": "/React-Project/static/media/sanji.8418bd9fe87730762082.gif",
     "static/media/zoro.jpg": "/React-Project/static/media/zoro.94536bc11546f9e28b35.jpg",
     "static/media/usopp.jpg": "/React-Project/static/media/usopp.c8241f1904573ac131dd.jpg",
@@ -53,10 +53,10 @@
     "static/media/sanji-wanted.jpg": "/React-Project/static/media/sanji-wanted.4b5adf3f1b13e048e71a.jpg",
     "index.html": "/React-Project/index.html",
     "main.07dbd260.css.map": "/React-Project/static/css/main.07dbd260.css.map",
-    "main.6f94e818.js.map": "/React-Project/static/js/main.6f94e818.js.map"
+    "main.42b4186c.js.map": "/React-Project/static/js/main.42b4186c.js.map"
   },
   "entrypoints": [
     "static/css/main.07dbd260.css",
-    "static/js/main.6f94e818.js"
+    "static/js/main.42b4186c.js"
   ]
 }
