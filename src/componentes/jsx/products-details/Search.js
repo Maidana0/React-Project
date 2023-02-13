@@ -1,17 +1,21 @@
 import { ListProducts } from '../../../firebase/config'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 
 export const Search = (category, id) => {
 
     const [listCategory, setLlistCategory] = useState(false)
-    useEffect(() => {
-        return async () => {
-            const lista = await ListProducts(`${category}List`)
-            setLlistCategory(lista)
-        }
-    }, [])
+    // useEffect(() => {
+    //     return async () => {
+    //         const lista = await ListProducts(`${category}List`)
+    //         setLlistCategory(lista)
+    //     }
+    // }, [])
 
+    if (!listCategory){
+        ListProducts(`${category}List`)
+        .then(data => setLlistCategory(data))
+    }
 
 
     const productoFinal = () => {
