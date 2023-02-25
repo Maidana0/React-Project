@@ -92,11 +92,11 @@
     display: block;
     margin: 50px auto;
     border-radius:100% ;
-    height: auto;
-    width: 40%;
+    width: auto;
+    height: 350px;
+    object-fit: contain;
     border: solid 1px $complementary-color;
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-    object-fit: cover;
    -webkit-animation:slide-in-top .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-top .5s cubic-bezier(.25,.46,.45,.94) both;
    @-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
     @media ( max-width: 785px ){

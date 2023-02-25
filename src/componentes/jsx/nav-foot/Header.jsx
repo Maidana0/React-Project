@@ -28,13 +28,13 @@ const Header = () => {
                             <AiFillHome /> Home
                         </NavLink>
                         <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/sanji'}>
-                            <AiFillShop /> Category 1
+                            <AiFillShop /> Sanji
                         </NavLink>
                         <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/usopp'} >
-                            <AiFillShop />Category 2
+                            <AiFillShop /> Usopp
                         </NavLink>
                         <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/zoro'} >
-                            <AiFillShop />Category 3
+                            <AiFillShop /> Zoro
                         </NavLink>
                         {
                             !accountUser.logged ?
