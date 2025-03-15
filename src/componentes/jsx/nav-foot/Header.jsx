@@ -1,18 +1,37 @@
 import { Turn as Hamburger } from 'hamburger-react'
-import { AiFillHome, AiOutlineUser, AiOutlinePoweroff, AiFillInfoCircle, AiFillShop, AiOutlineShoppingCart } from 'react-icons/ai';
+import { AiFillHome, AiOutlineUser, AiOutlinePoweroff, AiFillShop, AiOutlineShoppingCart } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 import { UseCartContext } from '../cart/components/CartContext';
+import { useState } from 'react';
 
 const Header = () => {
     const { cart, accountUser, logout } = UseCartContext()
+    const [isOpen, setOpen] = useState(false)
+
     const CartWidget = () => {
         if (cart.length >= 1) {
             return (<small>{cart.length}</small>)
         } return (" ")
     }
 
+    const handleClick = (toggled) => {
+        const nav = document.querySelector('#nav')
+        const backdrop = document.querySelector('.backdrop')
+        toggled ? nav.classList.add('nav-active') : nav.classList.remove('nav-active')
+        toggled ? backdrop.classList.add('backdrop-active') : backdrop.classList.remove('backdrop-active')
+        setOpen(!isOpen)
+    }
+
+    const onClick = () => {
+        if (window.screen.width <= 768) {
+            handleClick()
+        }
+    }
+
     return (
         <header>
+            <div className="backdrop" onClick={onClick}>  </div>
+
             <nav>
                 <div className="nav-logo">
                     <NavLink end to={'/home'}>
@@ -24,26 +43,26 @@ const Header = () => {
                 </div>
                 <ul id='nav' className="nav-items">
                     <li className='nav-links'>
-                        <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/home'} >
+                        <NavLink onClick={onClick} end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/home'} >
                             <AiFillHome /> Home
                         </NavLink>
-                        <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/sanji'}>
+                        <NavLink onClick={onClick} end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/sanji'}>
                             <AiFillShop /> Sanji
                         </NavLink>
-                        <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/usopp'} >
+                        <NavLink onClick={onClick} end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/usopp'} >
                             <AiFillShop /> Usopp
                         </NavLink>
-                        <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/zoro'} >
+                        <NavLink onClick={onClick} end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/category/zoro'} >
                             <AiFillShop /> Zoro
                         </NavLink>
                         {
                             !accountUser.logged ?
-                                <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/account/login'} >
+                                <NavLink onClick={onClick} end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/account/login'} >
                                     <AiOutlineUser />Log In
                                 </NavLink>
                                 :
                                 <>
-                                    <NavLink end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/products/favList'} >
+                                    <NavLink onClick={onClick} end className={({ isActive }) => isActive ? "link focus-item" : "link"} to={'/products/favList'} >
                                         <AiOutlineUser />Wish List
                                     </NavLink>
                                     <button className='link' type='button' onClick={logout}>
@@ -52,10 +71,6 @@ const Header = () => {
                                 </>
 
                         }
-
-                        {/* <NavLink end className={ ({isActive}) => isActive? "link focus-item" : "link" }>
-                        <AiFillInfoCircle /> About
-                    </NavLink> */}
 
                         <NavLink end className='link-shop' to={'/cart'}>
                             <AiOutlineShoppingCart title={'Ir al Carrito'} />
@@ -69,13 +84,14 @@ const Header = () => {
 
                 <div className='btn-burger'>
                     <Hamburger
-                        onToggle={toggled => {
-                            const nav = document.querySelector('#nav')
-                            toggled ? nav.classList.add('nav-active') : nav.classList.remove('nav-active')
-                        }}
+                        toggled={isOpen}
+                        toggle={setOpen}
+                        onToggle={handleClick}
                     />
                 </div>
             </nav>
+
+
         </header>
     )
 }

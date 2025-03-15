@@ -39,7 +39,7 @@ export const BtnProductInCart = ({ removeProduct, id, setDetails, details }) => 
             confirmButtonText: 'Si, quiero Borrarlo!'
           }).then((result) => {
             if (result.isConfirmed) {
-                removeProduct(id),
+                removeProduct(id);
               Swal.fire(
                 'Listo!',
                 'Tu producto ha sido removido.',

@@ -117,6 +117,7 @@ export const ListProducts = (category) => {
         })
         return listita
       })
+      .catch((error) => console.log(error))
   )
 
 }
