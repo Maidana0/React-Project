@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-Project/static/css/main.e12f97c3.css",
-    "main.js": "/React-Project/static/js/main.5470355b.js",
+    "main.css": "/React-Project/static/css/main.ebf09336.css",
+    "main.js": "/React-Project/static/js/main.7efde162.js",
     "static/media/sanji.gif": "/React-Project/static/media/sanji.8418bd9fe87730762082.gif",
     "static/media/zoro.jpg": "/React-Project/static/media/zoro.94536bc11546f9e28b35.jpg",
     "static/media/usopp.jpg": "/React-Project/static/media/usopp.c8241f1904573ac131dd.jpg",
@@ -52,11 +52,11 @@
     "static/media/sanji-kid.jpg": "/React-Project/static/media/sanji-kid.d7ba5d993daf54532213.jpg",
     "static/media/sanji-wanted.jpg": "/React-Project/static/media/sanji-wanted.4b5adf3f1b13e048e71a.jpg",
     "index.html": "/React-Project/index.html",
-    "main.e12f97c3.css.map": "/React-Project/static/css/main.e12f97c3.css.map",
-    "main.5470355b.js.map": "/React-Project/static/js/main.5470355b.js.map"
+    "main.ebf09336.css.map": "/React-Project/static/css/main.ebf09336.css.map",
+    "main.7efde162.js.map": "/React-Project/static/js/main.7efde162.js.map"
   },
   "entrypoints": [
-    "static/css/main.e12f97c3.css",
-    "static/js/main.5470355b.js"
+    "static/css/main.ebf09336.css",
+    "static/js/main.7efde162.js"
   ]
 }
